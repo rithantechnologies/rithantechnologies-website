@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rithan Technologies — Websites &amp; business software, Coimbatore</title>
+<meta name="description" content="We build mobile-first websites, online stores and WhatsApp order systems and AI automation for businesses across India. Launch site from ₹3,999. Free sample before you pay.">
+<link rel="icon" href="images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<meta property="og:title" content="Rithan Technologies — Websites &amp; business software">
+<meta property="og:description" content="Mobile-first websites, online stores and WhatsApp order systems. Free sample before you pay.">
+<meta property="og:image" content="images/og-image.jpg">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter+Tight:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* =====================================================================
+   Rithan Technologies — v11
+   Theme: warm off-white ground, deep indigo ink, blue→violet beam.
+   The diagonal is the motif — it comes straight off the logo's R stroke.
+   Motion: one system, all of it disabled under prefers-reduced-motion.
+   Edit CONFIG at the bottom before publishing.
+   ===================================================================== */
+:root{
+  --paper:#F7F6F2;
+  --paper-2:#EFEDE7;
+  --card:#FFFFFF;
+  --ink:#0B0F1A;
+  --ink-2:#151B2B;
+  --ink-soft:#39405292;
+  --body:#3A4155;
+  --mute:#767E93;
+  --line:rgba(11,15,26,.12);
+  --line-soft:rgba(11,15,26,.06);
+  --blue:#1F49E6;
+  --violet:#7B3FF2;
+  --beam:linear-gradient(100deg,var(--blue),var(--violet));
+  --ok:#0E7A54;
+  --wa:#128C4A;
+  --shell:min(1180px,100% - 2.4rem);
+  --e:cubic-bezier(.19,.72,.28,1);
+  --e-out:cubic-bezier(.16,1,.3,1);
+  --bar:0px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--body);
+  font:400 1.02rem/1.62 "Inter Tight",system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:var(--bar);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:300;pointer-events:none;opacity:.28;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E");
+}
+h1,h2,h3{margin:0;font-family:Archivo,sans-serif;font-weight:700;line-height:1.04;
+  letter-spacing:-.036em;color:var(--ink);text-wrap:balance}
+h1{font-size:clamp(2.2rem,6.6vw,4.5rem);font-weight:800;letter-spacing:-.048em;line-height:.98}
+h2{font-size:clamp(1.75rem,4.3vw,2.8rem);letter-spacing:-.042em}
+h3{font-size:1.18rem;letter-spacing:-.024em}
+p{margin:0 0 1rem}
+a{color:inherit}
+img{max-width:100%;display:block}
+ul{margin:0;padding:0;list-style:none}
+.shell{width:var(--shell);margin-inline:auto}
+section{padding:4.6rem 0;position:relative}
+@media(min-width:900px){section{padding:6.4rem 0}}
+:focus-visible{outline:3px solid var(--violet);outline-offset:3px;border-radius:4px}
+.mono{font:500 .72rem/1 "IBM Plex Mono",monospace;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--mute)}
+.lede{color:var(--body);font-size:1.08rem;max-width:54ch}
+.grad{background:var(--beam);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* cycling headline: reserve the slot so the layout never jumps */
+.cyc{display:inline-block;position:relative;vertical-align:bottom}
+.cyc .line{display:inline-block;transition:opacity .5s var(--e-out),transform .5s var(--e-out)}
+.cyc .line.out{opacity:0;transform:translateY(-.34em)}
+.cyc .line.in-up{opacity:0;transform:translateY(.34em)}
+html[data-motion="off"] .cyc .line{transition:none}
+
+/* ---------- section heading ---------- */
+.sh{margin-bottom:2.6rem;max-width:44ch}
+.sh .mono{display:inline-flex;align-items:center;gap:.55rem;margin-bottom:1rem;color:var(--blue)}
+.sh .mono::before{content:"";width:22px;height:2px;background:var(--beam);border-radius:2px}
+.sh p{color:var(--mute);margin:1rem 0 0;font-size:.99rem}
+
+/* =========================================================
+   MOTION SYSTEM
+   ========================================================= */
+/* 1. block reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--e-out),transform .8s var(--e-out)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+
+/* 2. headline: words rise out of a mask, staggered */
+.reveal-words .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.06em}
+.reveal-words .w i{display:inline-block;font-style:inherit;transform:translateY(110%);
+  transition:transform .9s var(--e-out)}
+.reveal-words.in .w i{transform:none}
+
+/* 3. the beam — diagonal light sweep, fires once */
+.beam-wrap{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.beam-wrap::before{
+  content:"";position:absolute;top:-60%;left:-30%;width:36%;height:220%;
+  background:linear-gradient(90deg,transparent,rgba(123,63,242,.13),rgba(31,73,230,.16),transparent);
+  transform:rotate(18deg) translateX(-60vw);
+  animation:sweep 2.4s 0.35s var(--e-out) forwards;
+}
+@keyframes sweep{to{transform:rotate(18deg) translateX(230vw)}}
+/* ambient field */
+.field{position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(620px circle at 88% 6%,rgba(123,63,242,.13),transparent 62%),
+    radial-gradient(520px circle at 2% 42%,rgba(31,73,230,.09),transparent 60%);
+}
+
+/* 4. card cursor glow */
+.gl{position:relative;isolation:isolate}
+.gl::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;opacity:0;z-index:-1;
+  transition:opacity .4s;pointer-events:none;
+  background:radial-gradient(360px circle at var(--mx,50%) var(--my,50%),rgba(123,63,242,.14),transparent 60%);
+}
+.gl:hover::before{opacity:1}
+
+/* 5. scroll progress */
+.prog{position:fixed;top:0;left:0;height:2px;width:0;z-index:120;background:var(--beam);
+  transition:width .12s linear}
+
+/* Reduced motion = LESS motion, not none. Opacity fades don't cause
+   vestibular discomfort; movement, loops and parallax do. A user can
+   still force full motion with the toggle in the footer. */
+@media (prefers-reduced-motion:reduce){
+  html:not([data-motion="full"]) .rv{transform:none;transition:opacity .5s var(--e-out)}
+  html:not([data-motion="full"]) .reveal-words .w i{transform:none;transition:opacity .5s var(--e-out)}
+  html:not([data-motion="full"]) .beam-wrap{display:none}
+  html:not([data-motion="full"]) .tk{animation:none;transform:none}
+  html:not([data-motion="full"]) .tick{mask-image:none;-webkit-mask-image:none;overflow-x:auto}
+  html:not([data-motion="full"]) .dot{animation:none}
+  html:not([data-motion="full"]) .wk:hover,
+  html:not([data-motion="full"]) .tier:hover,
+  html:not([data-motion="full"]) .tm:hover{transform:none}
+  html:not([data-motion="full"]) .wk:hover .shot img{transform:none}
+  html:not([data-motion="full"]) .abar{transform:none}
+  html:not([data-motion="full"]) .drawer a{animation:none;opacity:1;transform:none}
+}
+/* forced full motion must restore the transform transitions the
+   reduce block stripped, or a replayed headline snaps instead of rising */
+html[data-motion="full"] .reveal-words .w i{transition:transform .9s var(--e-out)}
+html[data-motion="full"] .rv{transition:opacity .8s var(--e-out),transform .8s var(--e-out)}
+
+/* explicit opt-out, whatever the OS says */
+html[data-motion="off"] *{animation:none!important;transition:none!important}
+html[data-motion="off"] .rv{opacity:1!important;transform:none!important}
+html[data-motion="off"] .reveal-words .w i{transform:none!important}
+html[data-motion="off"] .beam-wrap{display:none}
+
+/* motion toggle control */
+.mtoggle{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:.4rem .9rem;
+  border:1px solid rgba(247,246,242,.22);border-radius:999px;background:transparent;
+  color:rgba(247,246,242,.7);font:500 .84rem "Inter Tight",sans-serif;cursor:pointer;
+  transition:color .2s,border-color .2s}
+.mtoggle:hover{color:#fff;border-color:rgba(247,246,242,.5)}
+.mtoggle .sw{width:30px;height:17px;border-radius:999px;background:rgba(247,246,242,.22);
+  position:relative;flex:none;transition:background .25s}
+.mtoggle .sw::after{content:"";position:absolute;top:2.5px;left:2.5px;width:12px;height:12px;
+  border-radius:50%;background:#fff;transition:transform .25s var(--e)}
+.mtoggle[aria-pressed="true"] .sw{background:var(--violet)}
+.mtoggle[aria-pressed="true"] .sw::after{transform:translateX(13px)}
+
+/* ---------- buttons ---------- */
+.btn{
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  min-height:54px;padding:.92rem 1.7rem;border-radius:999px;text-decoration:none;
+  font-weight:600;font-size:1rem;cursor:pointer;overflow:hidden;isolation:isolate;
+  border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);
+  transition:transform .3s var(--e),border-color .3s,box-shadow .3s;
+  box-shadow:0 10px 26px -14px rgba(11,15,26,.7);
+}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--beam);
+  transform:translateY(101%);transition:transform .45s var(--e-out)}
+.btn:hover::before{transform:none}
+.btn:hover{border-color:transparent;box-shadow:0 16px 34px -14px rgba(80,50,220,.7)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:var(--line);box-shadow:none}
+.btn--ghost:hover{color:#fff;border-color:transparent}
+.btn--pale{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.btn--pale:hover{color:#fff}
+.btn svg{width:1.15em;height:1.15em;fill:currentColor;flex:none}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:100;background:rgba(247,246,242,.82);
+  backdrop-filter:blur(16px) saturate(160%);border-bottom:1px solid transparent;
+  transition:border-color .35s,background .35s}
+header.stuck{border-bottom-color:var(--line);background:rgba(247,246,242,.94)}
+.bar{display:flex;align-items:center;gap:1rem;padding:.72rem 0;width:var(--shell);margin-inline:auto}
+.logo{display:flex;align-items:center;text-decoration:none;margin-right:auto}
+/* lockup is 3.394:1 — set height only and let width follow */
+.logo img{height:40px;width:auto;flex:none;transition:transform .45s var(--e)}
+.logo:hover img{transform:scale(1.03)}
+@media(min-width:620px){.logo img{height:44px}}
+@media(max-width:360px){.logo img{height:36px}}
+nav.top{display:none;gap:1.75rem}
+nav.top a{text-decoration:none;font-size:.95rem;font-weight:500;color:var(--body);
+  position:relative;padding:.3rem 0;transition:color .25s}
+nav.top a::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;
+  background:var(--beam);border-radius:2px;transform:scaleX(0);transform-origin:left;
+  transition:transform .38s var(--e-out)}
+nav.top a:hover{color:var(--ink)}nav.top a:hover::after{transform:none}
+@media(min-width:920px){nav.top{display:flex}}
+.hdr-cta{display:none;min-height:44px;padding:.6rem 1.25rem;font-size:.92rem}
+@media(min-width:620px){.hdr-cta{display:inline-flex}}
+.burger{display:grid;place-items:center;width:46px;height:46px;background:transparent;
+  border:1px solid var(--line);border-radius:999px;color:var(--ink);cursor:pointer}
+@media(min-width:920px){.burger{display:none}}
+.drawer{display:none;border-top:1px solid var(--line);background:var(--paper)}
+.drawer.open{display:block}
+.drawer a{display:flex;justify-content:space-between;align-items:center;min-height:60px;
+  text-decoration:none;border-bottom:1px solid var(--line-soft);color:var(--ink);
+  font-family:Archivo,sans-serif;font-size:1.45rem;font-weight:700;letter-spacing:-.035em;
+  opacity:0;transform:translateY(10px);animation:drawIn .45s var(--e-out) forwards}
+.drawer.open a:nth-child(1){animation-delay:.03s}
+.drawer.open a:nth-child(2){animation-delay:.07s}
+.drawer.open a:nth-child(3){animation-delay:.11s}
+.drawer.open a:nth-child(4){animation-delay:.15s}
+.drawer.open a:nth-child(5){animation-delay:.19s}
+@keyframes drawIn{to{opacity:1;transform:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:3.4rem 0 3.2rem;overflow:hidden}
+@media(min-width:900px){.hero{padding:5rem 0 4.4rem}}
+.hero>.shell{position:relative;z-index:2}
+.avail{display:inline-flex;align-items:center;gap:.55rem;font-size:.9rem;color:var(--body);
+  margin-bottom:1.7rem;padding:.42rem .95rem .42rem .7rem;border-radius:999px;
+  background:rgba(255,255,255,.7);border:1px solid var(--line-soft)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);flex:none;
+  box-shadow:0 0 0 0 rgba(14,122,84,.5);animation:pulse 2.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(14,122,84,.45)}70%{box-shadow:0 0 0 9px rgba(14,122,84,0)}100%{box-shadow:0 0 0 0 rgba(14,122,84,0)}}
+.hero h1{max-width:16ch}
+.hero .lede{margin-top:1.5rem;font-size:1.14rem}
+.hero-cta{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:2.2rem}
+.hero-cta .btn{flex:1 1 auto;min-width:min(100%,15rem)}
+@media(min-width:600px){.hero-cta .btn{flex:0 0 auto}}
+.proof{display:grid;gap:.9rem;margin-top:3rem;padding-top:2.2rem;border-top:1px solid var(--line)}
+@media(min-width:720px){.proof{grid-template-columns:repeat(3,1fr);gap:1.6rem}}
+.proof div{display:flex;gap:.85rem;align-items:flex-start}
+.proof .ic{width:38px;height:38px;flex:none;border-radius:11px;display:grid;place-items:center;
+  background:linear-gradient(150deg,rgba(31,73,230,.14),rgba(123,63,242,.1));
+  border:1px solid rgba(123,63,242,.2)}
+.proof svg{width:18px;height:18px;stroke:var(--blue);fill:none;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round}
+.proof b{display:block;font-size:1rem;color:var(--ink)}
+.proof span{color:var(--mute);font-size:.9rem}
+
+/* ---------- capability ticker ---------- */
+.tick{border-block:1px solid var(--line);background:var(--paper-2);padding:.95rem 0;overflow:hidden;
+  mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.tk{display:flex;gap:2.4rem;width:max-content;animation:roll 40s linear infinite}
+.tick:hover .tk{animation-play-state:paused}
+@keyframes roll{to{transform:translateX(-50%)}}
+.tk span{font:500 .8rem/1 "IBM Plex Mono",monospace;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--mute);white-space:nowrap;display:flex;align-items:center;gap:2.4rem}
+.tk span::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--violet);opacity:.6}
+
+/* ---------- work ---------- */
+.wk{background:var(--card);border:1px solid var(--line);border-radius:24px;
+  padding:1.1rem;margin-bottom:1.3rem;overflow:hidden;
+  transition:transform .45s var(--e),box-shadow .45s var(--e),border-color .35s}
+.wk:hover{transform:translateY(-4px);border-color:rgba(123,63,242,.28);
+  box-shadow:0 30px 60px -34px rgba(31,40,90,.45)}
+@media(min-width:900px){
+  .wk{display:grid;grid-template-columns:1fr 1fr;gap:2.6rem;padding:1.7rem;align-items:center}
+}
+/* ---------- the stage ----------
+   Each project sets --tA/--tB inline, so the backdrop carries the
+   project's own colour instead of one generic blue for everything. */
+.shot{
+  border-radius:20px;overflow:hidden;position:relative;aspect-ratio:4/3;
+  display:flex;align-items:center;justify-content:center;gap:.8rem;padding:1.5rem;
+  background:
+    radial-gradient(120% 90% at 50% 8%,var(--tA,#EEF0FB),transparent 70%),
+    linear-gradient(155deg,var(--tA,#EEF0FB),var(--tB,#E4E2F6));
+}
+/* soft floor under the devices */
+.shot::after{
+  content:"";position:absolute;left:12%;right:12%;bottom:6%;height:14%;
+  background:radial-gradient(ellipse at center,rgba(16,22,60,.24),transparent 70%);
+  filter:blur(9px);pointer-events:none;
+}
+.shot img{
+  position:relative;z-index:1;
+  border:5px solid var(--ink);border-radius:19px;background:var(--ink);
+  max-height:100%;width:auto;
+  box-shadow:0 26px 50px -18px rgba(16,22,60,.5),0 0 0 1px rgba(255,255,255,.35) inset;
+  transition:transform .7s var(--e),box-shadow .7s var(--e);
+  /* --p is 0 at the card's entry, 1 at its exit; set from JS */
+  will-change:transform;
+}
+
+/* ---------- three-phone fan ---------- */
+.shot--stack{gap:0}
+.shot--stack img{max-height:88%;margin-inline:-7%}
+.shot--stack img:nth-child(1){transform:translateY(calc(var(--p,0) * -14px)) rotate(-7deg) translateX(6%) scale(.9);z-index:1}
+.shot--stack img:nth-child(2){transform:translateY(calc(var(--p,0) * -22px));z-index:3}
+.shot--stack img:nth-child(3){transform:translateY(calc(var(--p,0) * -14px)) rotate(7deg) translateX(-6%) scale(.9);z-index:2}
+.wk:hover .shot--stack img:nth-child(1){transform:translateY(-16px) rotate(-13deg) translateX(-4%) scale(.94)}
+.wk:hover .shot--stack img:nth-child(2){transform:translateY(-26px) scale(1.03)}
+.wk:hover .shot--stack img:nth-child(3){transform:translateY(-16px) rotate(13deg) translateX(4%) scale(.94)}
+
+/* ---------- two phones ---------- */
+.shot--pair img:first-child{transform:translateY(calc(var(--p,0) * -12px)) rotate(-3deg)}
+.shot--pair img:last-child{transform:translateY(calc(var(--p,0) * -20px)) rotate(3deg)}
+.wk:hover .shot--pair img:first-child{transform:translateY(-16px) rotate(-6deg) translateX(-4%)}
+.wk:hover .shot--pair img:last-child{transform:translateY(-24px) rotate(6deg) translateX(4%)}
+
+/* ---------- desktop screen + phone overlay ---------- */
+.shot--wide{padding:0}
+.shot--wide .desk{
+  border-width:0;border-radius:0;width:100%;height:100%;object-fit:cover;
+  object-position:left center;max-height:none;box-shadow:none;
+  transform:scale(calc(1 + var(--p,0) * .04));
+}
+.shot--wide .ph{
+  position:absolute;right:5%;bottom:6%;height:76%;width:auto;z-index:2;
+  border-width:4px;border-radius:14px;
+  transform:translateY(calc(var(--p,0) * -14px));
+}
+.wk:hover .shot--wide .desk{transform:scale(1.06)}
+.wk:hover .shot--wide .ph{transform:translateY(-14px) rotate(-3deg)}
+
+/* ---------- single flat artwork ---------- */
+.shot--flat{padding:0}
+.shot--flat img{border:0;border-radius:0;width:100%;height:100%;object-fit:cover;
+  max-height:none;box-shadow:none;transform:scale(calc(1.02 + var(--p,0) * .05))}
+.wk:hover .shot--flat img{transform:scale(1.08)}
+
+/* ---------- mobile: hover doesn't exist, so make it swipeable ---------- */
+@media(max-width:899px){
+  .shot{aspect-ratio:1/1;padding:1.1rem;gap:.9rem;
+    overflow-x:auto;scroll-snap-type:x mandatory;justify-content:flex-start;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .shot::-webkit-scrollbar{display:none}
+  .shot::after{display:none}
+  .shot img{scroll-snap-align:center;flex:0 0 auto;max-height:100%;
+    margin-inline:0!important;transform:none!important;border-radius:16px}
+  .shot--stack img:first-child{margin-left:auto!important}
+  .shot--stack img:last-child{margin-right:auto!important}
+  .shot--pair img:first-child{margin-left:auto!important}
+  .shot--pair img:last-child{margin-right:auto!important}
+  .shot--wide{display:block;overflow:hidden;aspect-ratio:4/3}
+  .shot--wide .desk{transform:none!important}
+  .shot--wide .ph{transform:none!important;height:70%}
+  .shot--flat{overflow:hidden}
+  .shot--flat img{transform:none!important}
+  /* swipe hint dots */
+  .swipe{display:flex;gap:.34rem;justify-content:center;margin-top:.7rem}
+  .swipe i{width:6px;height:6px;border-radius:50%;background:var(--line);transition:background .25s,width .25s}
+  .swipe i.on{width:18px;background:var(--violet)}
+}
+@media(min-width:900px){.swipe{display:none}}
+.wk-body{padding:1.2rem .4rem .4rem}
+@media(min-width:900px){.wk-body{padding:0}}
+.kind{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:.8rem}
+.wk h3{font-size:clamp(1.4rem,3.1vw,2rem);margin-bottom:.65rem}
+.wk p{color:var(--body);font-size:1rem;margin:0 0 1.1rem;max-width:42ch}
+.chips{display:flex;gap:.42rem;flex-wrap:wrap;margin-bottom:1rem}
+.chip{font:500 .74rem/1 "IBM Plex Mono",monospace;color:var(--mute);
+  border:1px solid var(--line);border-radius:999px;padding:.38rem .75rem}
+.more{border-top:1px solid var(--line-soft)}
+.more summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:.55rem;
+  min-height:50px;font-weight:600;font-size:.95rem;color:var(--blue)}
+.more summary::-webkit-details-marker{display:none}
+.more summary::after{content:"+";font-size:1.25rem;transition:transform .35s var(--e)}
+.more[open] summary::after{transform:rotate(45deg)}
+.more[open] .inner{animation:drop .45s var(--e-out)}
+@keyframes drop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.more p{font-size:.95rem;color:var(--mute);margin:0 0 1rem}
+.wk-link{display:inline-flex;align-items:center;min-height:44px;font-weight:600;
+  font-size:.94rem;color:var(--violet);text-decoration:none;
+  border-bottom:1.5px solid currentColor}
+
+/* ---------- offer ---------- */
+.tiers{display:grid;gap:1.2rem}
+@media(min-width:900px){.tiers{grid-template-columns:repeat(3,1fr);align-items:stretch}}
+.tier{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:1.8rem;
+  display:flex;flex-direction:column;
+  transition:transform .4s var(--e),box-shadow .4s var(--e),border-color .35s}
+.tier:hover{transform:translateY(-6px);border-color:rgba(123,63,242,.3);
+  box-shadow:0 30px 58px -34px rgba(31,40,90,.45)}
+.tier--best{background:var(--ink);color:rgba(247,246,242,.76);border-color:var(--ink);
+  position:relative;overflow:hidden}
+.tier--best::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(420px circle at 80% -10%,rgba(123,63,242,.4),transparent 62%)}
+.tier--best>*{position:relative;z-index:1}
+.tier--best h3,.tier--best .amt{color:#fff}
+.tier--best li{border-color:rgba(247,246,242,.14);color:rgba(247,246,242,.76)}
+.flag{align-self:flex-start;font:500 .68rem/1 "IBM Plex Mono",monospace;letter-spacing:.1em;
+  text-transform:uppercase;background:var(--beam);color:#fff;padding:.42rem .8rem;
+  border-radius:999px;margin-bottom:1.1rem}
+.tier .for{color:var(--mute);font-size:.94rem;margin:.6rem 0 1.4rem}
+.tier--best .for,.tier--best .per{color:rgba(247,246,242,.6)}
+.amt{font-family:Archivo,sans-serif;font-size:2.5rem;font-weight:800;letter-spacing:-.05em;
+  line-height:1;color:var(--ink)}
+.per{color:var(--mute);font-size:.86rem;margin:.55rem 0 1.5rem}
+.tier ul{margin-bottom:1.7rem}
+.tier li{font-size:.95rem;color:var(--body);padding:.65rem 0;
+  border-bottom:1px solid var(--line-soft);display:flex;gap:.65rem}
+.tier li::before{content:"";width:16px;height:16px;flex:none;margin-top:.22rem;border-radius:50%;
+  background:rgba(123,63,242,.15);box-shadow:inset 0 0 0 1.5px var(--violet)}
+.tier .btn{margin-top:auto;width:100%}
+
+/* ---------- AI automation band ---------- */
+.ai{background:var(--ink);color:rgba(247,246,242,.74);position:relative;overflow:hidden}
+.ai::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(680px circle at 88% -6%,rgba(123,63,242,.34),transparent 60%),
+             radial-gradient(520px circle at 4% 104%,rgba(31,73,230,.24),transparent 62%)}
+.ai>*{position:relative;z-index:1}
+.ai h2,.ai h3{color:#fff}
+.ai .sh .mono{color:#A98BFF}
+.ai .sh .mono::before{background:linear-gradient(90deg,#A98BFF,#7FC7FF)}
+.ai .sh p{color:rgba(247,246,242,.6)}
+.ai-grid{display:grid;gap:1rem;margin-top:2.6rem}
+@media(min-width:700px){.ai-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1060px){.ai-grid{grid-template-columns:repeat(3,1fr)}}
+.ai-card{border:1px solid rgba(247,246,242,.16);border-radius:20px;padding:1.5rem;
+  background:rgba(255,255,255,.045);
+  transition:transform .38s var(--e),border-color .3s,background .3s}
+.ai-card:hover{transform:translateY(-4px);border-color:rgba(169,139,255,.55);
+  background:rgba(255,255,255,.075)}
+.ai-card .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+  margin-bottom:1.05rem;background:linear-gradient(150deg,rgba(123,63,242,.42),rgba(31,73,230,.28));
+  border:1px solid rgba(169,139,255,.42)}
+.ai-card .ic svg{width:19px;height:19px;stroke:#C9B6FF;fill:none;stroke-width:1.9;
+  stroke-linecap:round;stroke-linejoin:round}
+.ai-card h3{font-size:1.05rem;margin-bottom:.45rem}
+.ai-card p{font-size:.92rem;color:rgba(247,246,242,.6);margin:0}
+.ai-note{display:flex;gap:1.4rem;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  margin-top:2.4rem;padding-top:1.8rem;border-top:1px solid rgba(247,246,242,.16)}
+.ai-price{font-family:Archivo,sans-serif;font-size:1.7rem;font-weight:800;color:#fff;
+  letter-spacing:-.04em;line-height:1.1}
+.ai-price small{display:block;font:400 .86rem/1.5 "Inter Tight",sans-serif;
+  color:rgba(247,246,242,.55);letter-spacing:0;margin-top:.4rem;max-width:34ch}
+
+/* ---------- steps ---------- */
+.steps{display:grid;gap:1.6rem;counter-reset:s;position:relative}
+@media(min-width:800px){
+  .steps{grid-template-columns:repeat(3,1fr);gap:2.4rem}
+  .steps::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;
+    background:var(--beam);opacity:.35;border-radius:2px}
+}
+.step{counter-increment:s;padding-top:1.4rem;border-top:2px solid var(--ink)}
+@media(min-width:800px){.step{border-top:none}}
+.step::before{content:"0" counter(s);font:500 .76rem/1 "IBM Plex Mono",monospace;
+  color:var(--violet);display:block;margin-bottom:1rem}
+.step h3{margin-bottom:.55rem}
+.step p{color:var(--mute);font-size:.96rem;margin:0}
+
+/* ---------- team ---------- */
+.team{display:grid;gap:1.1rem}
+@media(min-width:760px){.team{grid-template-columns:repeat(3,1fr)}}
+.tm{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:1.6rem;
+  display:flex;gap:1.2rem;align-items:center;
+  transition:transform .4s var(--e),border-color .35s,box-shadow .4s}
+.tm:hover{transform:translateY(-4px);border-color:rgba(123,63,242,.28);
+  box-shadow:0 24px 46px -30px rgba(31,40,90,.4)}
+@media(min-width:760px){.tm{display:block}}
+.tm img{width:66px;height:66px;border-radius:18px;flex:none;transition:transform .45s var(--e)}
+.tm:hover img{transform:scale(1.06) rotate(-3deg)}
+@media(min-width:760px){.tm img{width:76px;height:76px;margin-bottom:1.2rem}}
+.tm h3{font-size:1.1rem;margin-bottom:.25rem}
+.tm .role{font-size:.88rem;font-weight:600;background:var(--beam);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.tm p{color:var(--mute);font-size:.9rem;margin:.7rem 0 0}
+@media(max-width:759px){.tm p{display:none}}
+
+/* ---------- faq ---------- */
+.qa{border-top:2px solid var(--ink)}
+.qa details{border-bottom:1px solid var(--line)}
+.qa summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;
+  gap:1.2rem;align-items:center;min-height:62px;font-weight:600;font-size:1.05rem;
+  color:var(--ink);transition:padding-left .35s var(--e)}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary:hover{padding-left:.6rem}
+.qa summary::after{content:"+";font-size:1.45rem;flex:none;color:var(--violet);
+  transition:transform .35s var(--e)}
+.qa details[open] summary::after{transform:rotate(45deg)}
+.qa details[open] p{animation:drop .45s var(--e-out)}
+.qa details p{color:var(--body);font-size:.98rem;margin:0 0 1.4rem;max-width:60ch}
+
+/* ---------- contact ---------- */
+.cta{background:var(--ink);color:rgba(247,246,242,.75);border-radius:28px;
+  padding:2.2rem 1.5rem;position:relative;overflow:hidden}
+.cta::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(600px circle at 92% 0%,rgba(123,63,242,.32),transparent 60%),
+             radial-gradient(460px circle at 0% 100%,rgba(31,73,230,.24),transparent 62%)}
+.cta>*{position:relative;z-index:1}
+@media(min-width:900px){.cta{padding:3.4rem;display:grid;grid-template-columns:1fr 1.15fr;
+  gap:3.6rem;align-items:start}}
+.cta h2{color:#fff}
+.cta .lede{color:rgba(247,246,242,.72)}
+.direct{margin-top:2rem}
+.direct a{display:flex;justify-content:space-between;align-items:center;min-height:60px;
+  gap:1rem;text-decoration:none;color:#fff;font-weight:600;
+  border-bottom:1px solid rgba(247,246,242,.16);transition:padding-left .35s var(--e)}
+.direct a:hover{padding-left:.7rem}
+.direct a span:last-child{color:rgba(247,246,242,.58);font-weight:400;font-size:.92rem}
+form{margin-top:2rem}
+@media(min-width:900px){form{margin-top:0}}
+.fg{display:grid;gap:.95rem;margin-bottom:.95rem}
+@media(min-width:640px){.fg.two{grid-template-columns:1fr 1fr}}
+label{display:block;font-size:.86rem;font-weight:500;color:rgba(247,246,242,.75);margin-bottom:.45rem}
+label i{font-style:normal;color:#FF9B7A}
+input,select,textarea{width:100%;min-height:54px;padding:.85rem 1rem;
+  font:400 1rem "Inter Tight",sans-serif;color:#fff;background:rgba(255,255,255,.06);
+  border:1px solid rgba(247,246,242,.2);border-radius:14px;transition:border-color .25s,background .25s}
+textarea{min-height:110px;resize:vertical}
+input::placeholder,textarea::placeholder{color:rgba(247,246,242,.38)}
+select{appearance:none;
+  background-image:linear-gradient(45deg,transparent 50%,rgba(247,246,242,.6) 50%),
+    linear-gradient(135deg,rgba(247,246,242,.6) 50%,transparent 50%);
+  background-position:calc(100% - 20px) 1.55rem,calc(100% - 15px) 1.55rem;
+  background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+select option{background:var(--ink);color:#fff}
+input:focus,select:focus,textarea:focus{outline:none;border-color:#A98BFF;
+  background:rgba(255,255,255,.1)}
+.note{color:rgba(247,246,242,.55);font-size:.86rem;margin:1rem 0 0}
+.sent{display:none;margin-top:1rem;padding:.95rem 1.1rem;border-radius:14px;
+  background:rgba(31,179,122,.16);border:1px solid rgba(31,179,122,.4);font-size:.93rem;color:#fff}
+.sent.show{display:block;animation:drop .4s var(--e-out)}
+
+/* ---------- legal business identification ---------- */
+.f-legal{border-top:1px solid rgba(247,246,242,.14);margin-top:1.65rem;
+  padding-top:1.2rem;font-size:.85rem;line-height:1.65;
+  color:rgba(247,246,242,.78)}
+.f-legal p{max-width:90ch;font-size:inherit;line-height:inherit}
+.f-legal p+p{margin-top:.4rem}
+.f-legal strong{font-weight:600;color:rgba(247,246,242,.96)}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:rgba(247,246,242,.6);padding:3.2rem 0 1.5rem;overflow:hidden}
+.f-top{display:grid;gap:1.8rem}
+@media(min-width:760px){.f-top{grid-template-columns:1.4fr 1fr;align-items:start}}
+.f-logo{display:inline-flex;align-items:center;text-decoration:none;margin-bottom:1.1rem}
+.f-logo img{height:38px;width:auto}
+footer p{font-size:.93rem;max-width:36ch;margin:0}
+.f-links{display:flex;gap:1.4rem;flex-wrap:wrap}
+.f-links a{color:rgba(247,246,242,.6);text-decoration:none;font-size:.93rem;min-height:44px;
+  display:inline-flex;align-items:center;transition:color .22s}
+.f-links a:hover{color:#fff}
+.f-big{font-family:Archivo,sans-serif;font-weight:800;letter-spacing:-.065em;line-height:.82;
+  font-size:clamp(3.2rem,15vw,11rem);margin:2.6rem 0 0;user-select:none;
+  background:linear-gradient(180deg,rgba(247,246,242,.11),rgba(247,246,242,.02));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.f-bot{border-top:1px solid rgba(247,246,242,.14);margin-top:1.5rem;padding-top:1.3rem;
+  display:flex;gap:1rem;flex-wrap:wrap;justify-content:space-between;font-size:.85rem}
+
+/* ---------- action bar ---------- */
+.abar{position:fixed;left:0;right:0;bottom:0;z-index:110;display:flex;gap:.6rem;
+  padding:.72rem .9rem calc(.72rem + env(safe-area-inset-bottom));
+  background:rgba(247,246,242,.95);backdrop-filter:blur(16px);border-top:1px solid var(--line);
+  transform:translateY(110%);transition:transform .5s var(--e-out)}
+.abar.up{transform:none}
+@media(min-width:900px){.abar{display:none}}
+.abar a{flex:1;display:flex;align-items:center;justify-content:center;gap:.5rem;min-height:54px;
+  border-radius:999px;text-decoration:none;font-weight:600;font-size:.98rem}
+.abar .wa{background:var(--wa);color:#fff;flex:1.7;
+  box-shadow:0 8px 22px -10px rgba(18,140,74,.9)}
+.abar .call{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.abar svg{width:20px;height:20px;fill:currentColor;flex:none}
+.wa-float{display:none}
+@media(min-width:900px){
+  .wa-float{display:inline-flex;position:fixed;right:1.5rem;bottom:1.5rem;z-index:110;
+    align-items:center;gap:.55rem;padding:.9rem 1.35rem;border-radius:999px;background:var(--wa);
+    color:#fff;text-decoration:none;font-weight:600;font-size:.95rem;
+    box-shadow:0 16px 34px -12px rgba(9,60,34,.7);transition:transform .28s var(--e)}
+  .wa-float:hover{transform:translateY(-3px) scale(1.02)}
+  .wa-float svg{width:20px;height:20px;fill:currentColor}
+}
+</style>
+</head>
+<body>
+
+<div class="prog" id="prog"></div>
+
+<header id="hdr">
+  <div class="bar">
+    <a class="logo" href="#top" aria-label="Rithan Technologies — home">
+      <img src="images/logo-lockup.png" alt="Rithan Technologies" width="407" height="120">
+    </a>
+    <nav class="top">
+      <a href="#work">Work</a><a href="#offer">Pricing</a><a href="#ai">AI</a>
+      <a href="#team">Team</a><a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn hdr-cta mag" href="#start">Get a free sample</a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="drawer">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div class="drawer" id="drawer">
+    <div class="shell">
+      <a href="#work">Work <span class="mono">01</span></a>
+      <a href="#offer">Pricing <span class="mono">02</span></a>
+      <a href="#ai">AI automation <span class="mono">03</span></a>
+      <a href="#team">Team <span class="mono">04</span></a>
+      <a href="#faq">FAQ <span class="mono">05</span></a>
+      <a href="#start">Start a project <span class="mono">06</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="top">
+  <div class="field"></div>
+  <div class="beam-wrap"></div>
+  <div class="shell">
+    <span class="avail rv"><span class="dot"></span> Taking on new projects</span>
+    <h1 class="reveal-words" data-words>Your customers are on their phone.
+      <span class="cyc" id="cyc"><span class="line grad">Sell to them there.</span></span></h1>
+    <p class="lede rv d2">We build websites, online stores and WhatsApp order systems for small
+      businesses — so enquiries stop getting lost in your inbox.</p>
+    <div class="hero-cta rv d2">
+      <a class="btn mag" href="#start">Get a free sample</a>
+      <a class="btn btn--ghost mag" href="#work">See our work</a>
+    </div>
+    <div class="proof rv d3">
+      <div>
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div><b>See it before you pay</b><span>We build a sample of your site first, free.</span></div>
+      </div>
+      <div>
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+        <div><b>From ₹3,999</b><span>Price is on this page. No call needed.</span></div>
+      </div>
+      <div>
+        <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+        <div><b>You own everything</b><span>Domain, hosting and code in your name.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tick"><div class="tk" id="tk">
+  <span>Websites</span><span>Online stores</span><span>WhatsApp ordering</span><span>AI auto-reply</span>
+  <span>Product catalogues</span><span>Mobile apps</span><span>Online payments</span>
+  <span>Booking &amp; enquiry forms</span><span>Google listing</span>
+  <span>AI follow-ups</span><span>Customer follow-up</span><span>Delivery tracking</span>
+  <span>Tamil &amp; English</span><span>Hosting &amp; support</span>
+</div></div>
+
+<!-- ============================ WORK ============================ -->
+<section id="work">
+  <div class="shell">
+    <div class="sh rv">
+      <span class="mono">01 — Work</span>
+      <h2>Things we have actually built.</h2>
+      <p>Real businesses, real screens. Tap a project for the detail.</p>
+    </div>
+
+    <article class="wk gl rv">
+      <div class="shot shot--stack" style="--tA:#FBEFE0;--tB:#F0D9C4">
+        <img src="images/work-ks-story.webp" alt="KS Textiles story section" width="540" height="1028" loading="lazy">
+        <img src="images/work-ks-home.webp" alt="KS Textiles mobile storefront home page" width="540" height="1028" loading="lazy">
+        <img src="images/work-ks-products.webp" alt="KS Textiles collection grid" width="540" height="1028" loading="lazy">
+      </div>
+      <div class="swipe" aria-hidden="true"></div>
+      <div class="wk-body">
+        <div class="kind"><span class="mono">Shopify storefront</span><span class="mono">Saree retail</span></div>
+        <h3>KS Textiles</h3>
+        <p>A traditional saree brand turned into a storefront customers browse themselves —
+          instead of asking for every product photo over WhatsApp.</p>
+        <div class="chips"><span class="chip">Shopify</span><span class="chip">E-commerce</span><span class="chip">Mobile UX</span></div>
+        <details class="more"><summary>What we built</summary>
+          <div class="inner">
+            <p>Editorial home page, collection discovery and filtering, and a saree-first mobile
+              layout where the product photography carries the page. Festive campaign banners,
+              secure checkout and international shipping built in.</p>
+            <a class="wk-link" href="https://kstextilessarees.com/" target="_blank" rel="noopener">Visit kstextilessarees.com</a>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <article class="wk gl rv">
+      <div class="shot shot--pair" style="--tA:#E4EEFF;--tB:#CBDCFB">
+        <img src="images/work-aqualink-1.webp" alt="AquaLink Tamil-language landing screen" width="540" height="1028" loading="lazy">
+        <img src="images/work-aqualink-2.webp" alt="AquaLink delivery tracking screen" width="540" height="1028" loading="lazy">
+      </div>
+      <div class="swipe" aria-hidden="true"></div>
+      <div class="wk-body">
+        <div class="kind"><span class="mono">Product</span><span class="mono">Coimbatore</span></div>
+        <h3>AquaLink</h3>
+        <p>Tamil-first app that lets water-can businesses track deliveries, empty cans and
+          customer dues — instead of a notebook.</p>
+        <div class="chips"><span class="chip">Tamil UX</span><span class="chip">Mobile</span><span class="chip">Operations</span></div>
+        <details class="more"><summary>What we built</summary>
+          <div class="inner">
+            <p>Daily delivery workflow, can-count and dues tracking, and a WhatsApp demo funnel that
+              converts local business owners straight from the landing page. We built both the
+              software and the campaign that sells it.</p>
+            <a class="wk-link" href="https://aquatechmart.in/" target="_blank" rel="noopener">Visit aquatechmart.in</a>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <article class="wk gl rv">
+      <div class="shot shot--wide" style="--tA:#E8EEFA;--tB:#D8E2F5">
+        <img class="desk" src="images/work-fiblink-login.webp" alt="Fiblink CRM sign-in screen" width="1400" height="960" loading="lazy">
+        <img class="ph" src="images/work-fiblink-dashboard.webp" alt="Fiblink CRM mobile dashboard" width="540" height="1035" loading="lazy">
+      </div>
+      <div class="wk-body">
+        <div class="kind"><span class="mono">Business software</span><span class="mono">Live</span></div>
+        <h3>Fiblink CRM</h3>
+        <p>One place for a network operations team to track tasks, circuits, engineers and
+          inventory — replacing scattered spreadsheets.</p>
+        <div class="chips"><span class="chip">CRM</span><span class="chip">Java</span><span class="chip">Responsive</span></div>
+        <details class="more"><summary>What we built</summary>
+          <div class="inner">
+            <p>Real-time task tracking, OFC circuit management, field engineer workflows and
+              inventory visibility, on an interface that works on a phone out in the field.</p>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <article class="wk gl rv">
+      <div class="shot shot--flat" style="--tA:#DFF3FF;--tB:#C6E6FA">
+        <img src="images/work-aquatech.webp" alt="AquaTech Mart Tamil campaign creative" width="1080" height="1350" loading="lazy">
+      </div>
+      <div class="wk-body">
+        <div class="kind"><span class="mono">Landing page</span><span class="mono">Tamil</span></div>
+        <h3>AquaTech Mart</h3>
+        <p>Tamil-first product site that explains the offer in ten seconds and pushes straight
+          to a WhatsApp demo.</p>
+        <div class="chips"><span class="chip">Landing</span><span class="chip">Tamil</span><span class="chip">WhatsApp CTA</span></div>
+        <details class="more"><summary>What we built</summary>
+          <div class="inner">
+            <p>Benefit-led page in Tamil for shop owners who don't read technical English, with a
+              single WhatsApp action and a free-trial offer, plus the campaign creative behind it.</p>
+            <a class="wk-link" href="https://aquatechmart.in/" target="_blank" rel="noopener">Visit aquatechmart.in</a>
+          </div>
+        </details>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============================ OFFER ============================ -->
+<section id="offer" style="background:var(--paper-2)">
+  <div class="shell">
+    <div class="sh rv">
+      <span class="mono">02 — What it costs</span>
+      <h2>Pick where you are today.</h2>
+      <p>Prices published, because you shouldn't need a phone call to find out if you can
+        afford this.</p>
+    </div>
+    <div class="tiers">
+
+      <div class="tier gl rv">
+        <h3>Launch Site</h3>
+        <p class="for">You have no website yet and customers can't find you online.</p>
+        <div class="amt" data-cfg="p1">₹3,999</div>
+        <div class="per">one-off · domain &amp; hosting at cost</div>
+        <ul>
+          <li>Up to 4 pages, mobile-first</li>
+          <li>Product or service showcase</li>
+          <li>WhatsApp enquiry button</li>
+          <li>Google Maps &amp; contact</li>
+          <li>Google indexing</li>
+          <li>One revision round</li>
+        </ul>
+        <a class="btn btn--ghost mag" href="#start" data-type="Launch website">Start here</a>
+      </div>
+
+      <div class="tier tier--best gl rv d1">
+        <span class="flag">Most businesses need this</span>
+        <h3>Growth Site + Automation</h3>
+        <p class="for">You're getting enquiries but losing them to slow replies.</p>
+        <div class="amt">Quoted</div>
+        <div class="per">setup + optional monthly support</div>
+        <ul>
+          <li>Full website or online catalogue</li>
+          <li>Add and edit products yourself</li>
+          <li>WhatsApp auto-reply on price &amp; stock</li>
+          <li>Enquiries saved to a sheet or CRM</li>
+          <li>Hosting, backups and fixes</li>
+          <li>Advanced SEO setup</li>
+        </ul>
+        <a class="btn btn--pale mag" href="#start" data-type="Website + WhatsApp automation">Get a quote</a>
+      </div>
+
+      <div class="tier gl rv d2">
+        <h3>Custom Software</h3>
+        <p class="for">You need a system built around how your business actually runs.</p>
+        <div class="amt">Scoped</div>
+        <div class="per">quoted after one call</div>
+        <ul>
+          <li>E-commerce with payments</li>
+          <li>CRM and operations dashboards</li>
+          <li>Courier, marketplace &amp; API integration</li>
+          <li>Workflow automation</li>
+          <li>Cloud or VPS setup</li>
+          <li>Ongoing engineering support</li>
+        </ul>
+        <a class="btn btn--ghost mag" href="#start" data-type="Custom software / CRM">Discuss it</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ AI AUTOMATION ============================ -->
+<section class="ai" id="ai">
+  <div class="shell">
+    <div class="sh rv">
+      <span class="mono">03 — AI automation</span>
+      <h2>An assistant that answers while you sleep.</h2>
+      <p>Most enquiries are the same five questions. We train an assistant on your own
+        products and prices so it replies in seconds, in Tamil or English, and hands over
+        to you when it matters.</p>
+    </div>
+
+    <div class="ai-grid">
+      <article class="ai-card gl rv">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <h3>WhatsApp auto-reply</h3>
+        <p>Price, stock, sizes, delivery time and payment — answered the moment the message
+          arrives, day or night.</p>
+      </article>
+
+      <article class="ai-card gl rv d1">
+        <span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></span>
+        <h3>Instagram DMs &amp; comments</h3>
+        <p>Every "price?" under a post gets a reply and moves to WhatsApp, instead of sitting
+          there until tomorrow.</p>
+      </article>
+
+      <article class="ai-card gl rv d2">
+        <span class="ic"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+        <h3>Photo &amp; catalogue search</h3>
+        <p>A customer sends a photo of what they want. The assistant finds the closest match
+          in your stock and quotes it.</p>
+      </article>
+
+      <article class="ai-card gl rv">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></span>
+        <h3>Follow-ups that don't get forgotten</h3>
+        <p>Quoted but never replied? Order ready? Payment pending? The assistant chases it,
+          politely, on schedule.</p>
+      </article>
+
+      <article class="ai-card gl rv d1">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H7l-3 3z"/><path d="M8 9h8M8 12h5"/></svg></span>
+        <h3>Tamil and English, both</h3>
+        <p>Customers write however they like — Tamil, English or Tanglish. The assistant
+          understands and replies in kind.</p>
+      </article>
+
+      <article class="ai-card gl rv d2">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 14 3-4 3 3 5-6"/></svg></span>
+        <h3>Your day, summarised</h3>
+        <p>One message each evening: enquiries received, orders confirmed, what still needs
+          you. No dashboard to learn.</p>
+      </article>
+    </div>
+
+    <div class="ai-note rv">
+      <div class="ai-price">From ₹2,999/month
+        <small>Plus one-time setup to load your catalogue and train it on your prices.
+          WhatsApp conversation charges from Meta are billed at cost.</small>
+      </div>
+      <a class="btn btn--pale mag" href="#start" data-type="AI automation / WhatsApp assistant">Try it free for 15 days</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ HOW ============================ -->
+<section>
+  <div class="shell">
+    <div class="sh rv">
+      <span class="mono">04 — How it works</span>
+      <h2>Three steps. Stop after the first if you want.</h2>
+    </div>
+    <div class="steps">
+      <div class="step rv"><h3>You show us</h3><p>Send what you sell and how customers reach you now. Two minutes on WhatsApp.</p></div>
+      <div class="step rv d1"><h3>We build a sample</h3><p>A working version of your own site, with your real products. Free, and yours to reject.</p></div>
+      <div class="step rv d2"><h3>You go live</h3><p>We finish it, hand over the domain, hosting and code in your name, and stay on call.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TEAM ============================ -->
+<section id="team" style="background:var(--paper-2)">
+  <div class="shell">
+    <div class="sh rv">
+      <span class="mono">05 — Team</span>
+      <h2>Three people. You talk to all of them.</h2>
+      <p>No account manager in between, and no ticket queue. Backed by 10+ years building order
+        systems for large retailers.</p>
+    </div>
+    <div class="team">
+      <article class="tm gl rv">
+        <img src="images/team-1.svg" alt="" width="76" height="76" loading="lazy">
+        <div>
+          <h3>Engineering Lead</h3>
+          <div class="role">Architecture &amp; delivery</div>
+          <p>Owns scope, technical direction and final delivery.</p>
+        </div>
+      </article>
+      <article class="tm gl rv d1">
+        <img src="images/team-2.svg" alt="" width="76" height="76" loading="lazy">
+        <div>
+          <h3>Design &amp; Frontend</h3>
+          <div class="role">Interface &amp; experience</div>
+          <p>Shapes the visual system, mobile UX and storefront presentation.</p>
+        </div>
+      </article>
+      <article class="tm gl rv d2">
+        <img src="images/team-3.svg" alt="" width="76" height="76" loading="lazy">
+        <div>
+          <h3>Delivery &amp; Support</h3>
+          <div class="role">Content, QA &amp; launch</div>
+          <p>Handles setup, content, testing and a smooth handover.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section id="faq">
+  <div class="shell">
+    <div class="sh rv">
+      <span class="mono">06 — Questions</span>
+      <h2>Before you message us.</h2>
+    </div>
+    <div class="qa rv d1">
+      <details open><summary>Can I see something before I pay?</summary>
+        <p>Yes. We build a working sample of your own site using your real products and send you a
+          link. Don't like it, you owe nothing and we delete it.</p></details>
+      <details><summary>How long does it take?</summary>
+        <p>A launch site is about two weeks from the day your photos and details are ready. Bigger
+          builds run four to eight weeks. The hold-up is almost always content from your side, not
+          the code.</p></details>
+      <details><summary>Do I need to know anything technical?</summary>
+        <p>No. We handle the domain, hosting, SSL, email and Google setup, and show you how to
+          update it in a short walkthrough.</p></details>
+      <details><summary>Who owns the website?</summary>
+        <p>You do. Domain and hosting are registered in your name and the code is handed over on
+          delivery. If you ever leave, you take everything with you.</p></details>
+      <details><summary>Do you work outside Coimbatore?</summary>
+        <p>Yes — across India and the Gulf. Everything from the first message to handover works over
+          WhatsApp, email and video.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ START ============================ -->
+<section id="start">
+  <div class="shell">
+    <div class="cta rv">
+      <div>
+        <h2>Tell us what you need.</h2>
+        <p class="lede" style="margin-top:1.2rem">Two minutes now, and you'll have a scope, a price
+          and a timeline within one working day.</p>
+        <div class="direct">
+          <a data-wa="Hi Rithan Technologies, I would like a free sample for my business."><span>WhatsApp us</span><span data-cfg="phone">+91 79043 68613</span></a>
+          <a data-tel><span>Call</span><span data-cfg="phone">+91 79043 68613</span></a>
+          <a data-mail><span>Email</span><span data-cfg="email">rithantechnologies@gmail.com</span></a>
+        </div>
+      </div>
+
+      <form id="pf" novalidate>
+        <div class="fg two">
+          <div><label for="pfName">Your name <i>*</i></label>
+            <input id="pfName" name="name" autocomplete="name" required placeholder="Your name"></div>
+          <div><label for="pfPhone">WhatsApp number <i>*</i></label>
+            <input id="pfPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="+91 9XXXXXXXXX"></div>
+        </div>
+        <div class="fg two">
+          <div><label for="pfBiz">Business name</label>
+            <input id="pfBiz" name="business" placeholder="Shop or brand"></div>
+          <div><label for="pfType">What do you need? <i>*</i></label>
+            <select id="pfType" name="type" required>
+              <option value="">Choose one</option>
+              <option>Launch website</option>
+              <option>Website + WhatsApp automation</option>
+              <option>Online store / e-commerce</option>
+              <option>AI automation / WhatsApp assistant</option>
+              <option>Custom software / CRM</option>
+              <option>Not sure — recommend for me</option>
+            </select></div>
+        </div>
+        <div class="fg">
+          <div><label for="pfMsg">Anything else?</label>
+            <textarea id="pfMsg" name="msg" placeholder="What you sell, and how customers reach you today"></textarea></div>
+        </div>
+        <button class="btn btn--pale mag" type="submit" style="width:100%">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.5 0-2.3-.2-4.6-2.2-2.3-2-2.9-3.7-3-4.2 0-.5.5-1.5 1-1.7.3-.2.6-.1.8.1l1 1.3c.2.2.2.5 0 .7l-.4.5c-.1.2-.2.4 0 .7.3.5.9 1.3 1.6 1.8.6.5 1.2.7 1.5.8.3 0 .5-.1.6-.3l.4-.5c.2-.2.4-.3.7-.2l1.5.7c.3.1.4.4.3.7Z"/></svg>
+          Send on WhatsApp
+        </button>
+        <p class="note">Only 4 fields. Opens WhatsApp with your details filled in — nothing is
+          stored on this site.</p>
+        <div class="sent" id="pfSent">Opening WhatsApp with your details. If nothing happens, use
+          the WhatsApp button below.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="shell">
+    <div class="f-top">
+      <div>
+        <a class="f-logo" href="#top" aria-label="Rithan Technologies — top">
+          <img src="images/logo-lockup-light.png" alt="Rithan Technologies" width="407" height="120">
+        </a>
+        <p>Websites, online stores and business software for growing companies.
+          <span data-cfg="based">Coimbatore, Tamil Nadu</span>.</p>
+      </div>
+      <div class="f-links">
+        <a href="#work">Work</a><a href="#offer">Pricing</a><a href="#ai">AI</a><a href="#faq">FAQ</a>
+        <a data-mail>Email</a><a data-wa="Hi Rithan Technologies, I have a question.">WhatsApp</a>
+      </div>
+    </div>
+    <div class="f-legal" id="legal-business-disclosure" aria-label="Legal business information">
+      <p><strong>Legal business information:</strong> Rithan Technologies is a software services
+        brand operated by <strong>PERIYASAMY</strong>, sole proprietor of
+        <strong>DATAWINGS TECHNOLOGIES</strong>.</p>
+      <p><strong>Registered business address:</strong> No.130/6A-1, Harsha Towers,
+        Thiruvika Road, Karur, Tamil Nadu 639001, India.
+        Service location: Coimbatore, Tamil Nadu.</p>
+    </div>
+    <div class="f-big" aria-hidden="true">RITHAN</div>
+    <div class="f-bot">
+      <span>© <span id="yr">2026</span> Rithan Technologies</span>
+      <button class="mtoggle" id="mtoggle" aria-pressed="false">
+        <span class="sw" aria-hidden="true"></span><span id="mlabel">Animation</span>
+      </button>
+      <span>Mon–Sat, 9am–8pm IST</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" data-wa="Hi Rithan Technologies, I would like a free sample for my business.">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.5 0-2.3-.2-4.6-2.2-2.3-2-2.9-3.7-3-4.2 0-.5.5-1.5 1-1.7.3-.2.6-.1.8.1l1 1.3c.2.2.2.5 0 .7l-.4.5c-.1.2-.2.4 0 .7.3.5.9 1.3 1.6 1.8.6.5 1.2.7 1.5.8.3 0 .5-.1.6-.3l.4-.5c.2-.2.4-.3.7-.2l1.5.7c.3.1.4.4.3.7Z"/></svg>
+  WhatsApp us
+</a>
+
+<div class="abar" id="abar">
+  <a class="wa" data-wa="Hi Rithan Technologies, I would like a free sample for my business.">
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.5 0-2.3-.2-4.6-2.2-2.3-2-2.9-3.7-3-4.2 0-.5.5-1.5 1-1.7.3-.2.6-.1.8.1l1 1.3c.2.2.2.5 0 .7l-.4.5c-.1.2-.2.4 0 .7.3.5.9 1.3 1.6 1.8.6.5 1.2.7 1.5.8.3 0 .5-.1.6-.3l.4-.5c.2-.2.4-.3.7-.2l1.5.7c.3.1.4.4.3.7Z"/></svg>
+    Get a free sample
+  </a>
+  <a class="call" data-tel aria-label="Call us">
+    <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1z"/></svg>
+    Call
+  </a>
+</div>
+
+<script>
+/* ================= EDIT THIS BEFORE PUBLISHING ================= */
+const CONFIG = {
+  company:  "Rithan Technologies",
+  based:    "Coimbatore, Tamil Nadu",
+  email:    "rithantechnologies@gmail.com",
+  phone:    "+91 79043 68613",
+  whatsapp: "917904368613",          // country code, digits only
+  p1:       "₹3,999",
+
+  /* Headline lines that cycle after the fixed opening sentence.
+     Leave ONE line here to stop it cycling. Keep them short. */
+  headlines: [
+    "Sell to them there.",
+    "Make it easy to buy.",
+    "Don't make them wait.",
+    "Be open 24 hours.",
+    "Stop losing orders."
+  ],
+  headlineHold: 3200        // ms each line stays up
+};
+/* =============================================================== */
+
+const mqReduce = matchMedia("(prefers-reduced-motion: reduce)");
+const $$ = s => document.querySelectorAll(s);
+const root = document.documentElement;
+
+/* Motion preference: OS default, overridable by the footer toggle.
+   full = everything on, off = nothing, auto = follow the OS. */
+let motion = "auto";
+try { motion = localStorage.getItem("rt-motion") || "auto"; } catch (e) {}
+function applyMotion() {
+  root.dataset.motion = motion;
+  const on = motion === "full" || (motion === "auto" && !mqReduce.matches);
+  const btn = document.getElementById("mtoggle");
+  if (btn) {
+    btn.setAttribute("aria-pressed", String(on));
+    document.getElementById("mlabel").textContent = on ? "Animation on" : "Animation off";
+  }
+  return on;
+}
+let reduced = !( motion === "full" || (motion === "auto" && !mqReduce.matches) );
+mqReduce.addEventListener?.("change", () => { reduced = !applyMotion(); });
+
+$$("[data-cfg]").forEach(el => { const v = CONFIG[el.dataset.cfg]; if (v) el.textContent = v; });
+$$("[data-wa]").forEach(el => {
+  el.href = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(el.dataset.wa);
+  el.target = "_blank"; el.rel = "noopener";
+});
+$$("[data-tel]").forEach(el => { el.href = "tel:" + CONFIG.phone.replace(/[^\d+]/g, ""); });
+$$("[data-mail]").forEach(el => { el.href = "mailto:" + CONFIG.email; });
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+/* motion toggle */
+const mbtn = document.getElementById("mtoggle");
+applyMotion();
+mbtn?.addEventListener("click", () => {
+  const on = mbtn.getAttribute("aria-pressed") === "true";
+  motion = on ? "off" : "full";
+  try { localStorage.setItem("rt-motion", motion); } catch (e) {}
+  reduced = !applyMotion();
+  /* reload so every entrance animation replays from a clean state —
+     the preference is persisted, so this is safe and always correct */
+  location.reload();
+});
+
+/* ---- headline: split into masked words, then stagger them in ---- */
+$$("[data-words]").forEach(h => {
+  const walk = node => {
+    [...node.childNodes].forEach(n => {
+      if (n.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        n.textContent.split(/(\s+)/).forEach(tok => {
+          if (!tok.trim()) { frag.appendChild(document.createTextNode(tok)); return; }
+          const w = document.createElement("span"); w.className = "w";
+          const i = document.createElement("i"); i.textContent = tok;
+          w.appendChild(i); frag.appendChild(w);
+        });
+        n.replaceWith(frag);
+      } else if (n.nodeType === 1) walk(n);
+    });
+  };
+  walk(h);
+  h.querySelectorAll(".w i").forEach((i, n) => { i.style.transitionDelay = (0.05 + n * 0.055) + "s"; });
+  void h.offsetHeight;                       // force the start style to be committed
+  requestAnimationFrame(() => requestAnimationFrame(() => h.classList.add("in")));
+});
+
+/* ---- cycling headline ---- */
+(function cycleHeadline() {
+  const slot = document.getElementById("cyc");
+  const lines = (CONFIG.headlines || []).filter(Boolean);
+  if (!slot || lines.length < 2) return;
+
+  const el = slot.querySelector(".line");
+  const h1 = slot.closest("h1");
+
+  /* Lock the headline box to the tallest line, or the page shifts every
+     few seconds as a shorter line rewraps. Re-measure on resize. */
+  function reserve() {
+    h1.style.minHeight = "";
+    slot.style.minWidth = "";
+    const keep = el.textContent;
+    let tallest = 0, widest = 0;
+    lines.forEach(t => {
+      el.textContent = t;
+      tallest = Math.max(tallest, h1.getBoundingClientRect().height);
+      widest  = Math.max(widest,  el.getBoundingClientRect().width);
+    });
+    el.textContent = keep;
+    h1.style.minHeight = Math.ceil(tallest) + "px";
+    if (innerWidth >= 700) slot.style.minWidth = Math.ceil(widest) + "px";
+  }
+  reserve();
+  let rTick;
+  addEventListener("resize", () => { clearTimeout(rTick); rTick = setTimeout(reserve, 180); });
+
+  el.textContent = lines[0];
+  let i = 0;
+
+  setInterval(() => {
+    if (reduced) return;                    // hold line one when motion is off
+    i = (i + 1) % lines.length;
+    el.classList.add("out");
+    setTimeout(() => {
+      el.textContent = lines[i];
+      el.classList.remove("out");
+      el.classList.add("in-up");
+      requestAnimationFrame(() => requestAnimationFrame(() => el.classList.remove("in-up")));
+    }, 500);
+  }, CONFIG.headlineHold || 3200);
+})();
+
+/* ---- mobile menu ---- */
+const burger = document.getElementById("burger"), drawer = document.getElementById("drawer");
+burger.addEventListener("click", () => {
+  burger.setAttribute("aria-expanded", drawer.classList.toggle("open"));
+});
+drawer.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+  drawer.classList.remove("open"); burger.setAttribute("aria-expanded", "false");
+}));
+
+/* ---- scroll: progress bar, header state, action bar ---- */
+const prog = document.getElementById("prog"), hdr = document.getElementById("hdr"),
+      abar = document.getElementById("abar");
+let tick = false;
+addEventListener("scroll", () => {
+  if (tick) return; tick = true;
+  requestAnimationFrame(() => {
+    const max = document.body.scrollHeight - innerHeight;
+    prog.style.width = (max > 0 ? (scrollY / max) * 100 : 0) + "%";
+    hdr.classList.toggle("stuck", scrollY > 8);
+    abar.classList.toggle("up", scrollY > 220);   // slides in once past the hero
+    tick = false;
+  });
+}, { passive: true });
+
+/* ---- block reveals ---- */
+const obs = new IntersectionObserver((es, o) => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); o.unobserve(e.target); } });
+}, { threshold: .1, rootMargin: "0px 0px -5% 0px" });
+$$(".rv").forEach(el => obs.observe(el));
+
+/* ---- cursor glow on cards, desktop only ---- */
+if (matchMedia("(hover: hover)").matches && !reduced) {
+  $$(".gl").forEach(c => c.addEventListener("pointermove", e => {
+    const r = c.getBoundingClientRect();
+    c.style.setProperty("--mx", (e.clientX - r.left) + "px");
+    c.style.setProperty("--my", (e.clientY - r.top) + "px");
+  }));
+  /* ---- magnetic buttons ---- */
+  $$(".mag").forEach(b => {
+    b.addEventListener("pointermove", e => {
+      const r = b.getBoundingClientRect();
+      b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * .16}px,
+                                     ${(e.clientY - r.top - r.height / 2) * .3}px)`;
+    });
+    b.addEventListener("pointerleave", () => { b.style.transform = ""; });
+  });
+}
+
+/* ---- work cards: scroll-linked parallax (--p goes 0 -> 1 as the card passes) ---- */
+const shots = [...document.querySelectorAll(".shot")];
+let pTick = false;
+function parallax() {
+  if (reduced) return;
+  shots.forEach(s => {
+    const r = s.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > innerHeight) return;
+    const p = 1 - (r.top + r.height / 2) / (innerHeight + r.height / 2);
+    s.style.setProperty("--p", Math.max(0, Math.min(1, p)).toFixed(3));
+  });
+}
+addEventListener("scroll", () => {
+  if (pTick) return; pTick = true;
+  requestAnimationFrame(() => { parallax(); pTick = false; });
+}, { passive: true });
+parallax();
+
+/* ---- mobile: build swipe dots for each scrollable shot ---- */
+document.querySelectorAll(".swipe").forEach(dots => {
+  const shot = dots.previousElementSibling;
+  if (!shot || !shot.classList.contains("shot")) return;
+  const imgs = [...shot.querySelectorAll("img")];
+  if (imgs.length < 2) { dots.remove(); return; }
+  imgs.forEach((_, i) => {
+    const d = document.createElement("i");
+    if (i === Math.floor(imgs.length / 2)) d.className = "on";
+    dots.appendChild(d);
+  });
+  /* start the stack centred on the main screen */
+  requestAnimationFrame(() => {
+    if (innerWidth < 900) {
+      const mid = imgs[Math.floor(imgs.length / 2)];
+      shot.scrollLeft = mid.offsetLeft - (shot.clientWidth - mid.clientWidth) / 2;
+    }
+  });
+  let sTick = false;
+  shot.addEventListener("scroll", () => {
+    if (sTick) return; sTick = true;
+    requestAnimationFrame(() => {
+      const mid = shot.scrollLeft + shot.clientWidth / 2;
+      let best = 0, bestD = Infinity;
+      imgs.forEach((im, i) => {
+        const c = im.offsetLeft + im.clientWidth / 2, d = Math.abs(c - mid);
+        if (d < bestD) { bestD = d; best = i; }
+      });
+      [...dots.children].forEach((d, i) => d.classList.toggle("on", i === best));
+      sTick = false;
+    });
+  }, { passive: true });
+});
+
+/* ---- seamless ticker ---- */
+const tk = document.getElementById("tk"); tk.innerHTML += tk.innerHTML;
+
+/* ---- one work detail open at a time ---- */
+const mores = $$(".more");
+mores.forEach(d => d.addEventListener("toggle", () => {
+  if (d.open) mores.forEach(o => { if (o !== d) o.open = false; });
+}));
+
+/* ---- pricing buttons preselect the form ---- */
+$$("[data-type]").forEach(el => el.addEventListener("click", () => {
+  const sel = document.getElementById("pfType");
+  if (sel) sel.value = el.dataset.type;
+  setTimeout(() => document.getElementById("pfName")?.focus({ preventScroll: true }), 600);
+}));
+
+/* ---- form -> WhatsApp ---- */
+const pf = document.getElementById("pf");
+pf.addEventListener("submit", e => {
+  e.preventDefault();
+  if (!pf.checkValidity()) { pf.reportValidity(); return; }
+  const f = new FormData(pf), v = k => (f.get(k) || "").toString().trim() || "—";
+  const msg = ["Hi Rithan Technologies, I'd like a free sample.", "",
+    "Name: " + v("name"), "WhatsApp: " + v("phone"), "Business: " + v("business"),
+    "Need: " + v("type"), "", v("msg")].join("\n");
+  document.getElementById("pfSent").classList.add("show");
+  const url = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(msg);
+  const w = window.open(url, "_blank");
+  if (w) w.opener = null; else location.href = url;
+});
+
+/* ---- keep the action bar off the footer ---- */
+function sizeBar() {
+  const h = getComputedStyle(abar).display === "none" ? 0 : abar.offsetHeight;
+  document.documentElement.style.setProperty("--bar", h + "px");
+}
+addEventListener("resize", sizeBar); sizeBar();
+
+/* ---- local business schema ---- */
+const ld = {
+  "@context": "https://schema.org", "@type": "ProfessionalService",
+  name: CONFIG.company,
+  description: "Websites, online stores, WhatsApp order systems and custom business software.",
+  telephone: CONFIG.phone, email: CONFIG.email, areaServed: ["IN", "AE"],
+  address: { "@type": "PostalAddress", addressLocality: "Coimbatore",
+             addressRegion: "Tamil Nadu", addressCountry: "IN" }
+};
+const s = document.createElement("script");
+s.type = "application/ld+json"; s.textContent = JSON.stringify(ld);
+document.head.appendChild(s);
+</script>
+</body>
+</html>
