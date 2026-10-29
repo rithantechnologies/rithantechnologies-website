@@ -33,3 +33,19 @@ Keep the old VPS's main website and HTTPS Nginx configuration available until DN
 ## Repository history
 
 Initial migration commit is made on the `main` branch locally. Configure an approved Git remote and push `main` after the repository owner provides the destination Git URL and authorizes authentication. Do not commit TLS keys, credentials or application environment files.
+
+## WhatsApp AI product page (2026-10-29)
+
+- `site/whatsapp-ai/index.html` is Rithan AI's standalone, original branded
+  WhatsApp AI service page. No third-party product code is included.
+- `site/index.html` links to `/whatsapp-ai/` from its desktop/mobile navigation,
+  footer and existing AI section. Existing project demos and legal pages remain
+  untouched.
+- The interactive conversations are scripted illustrations, not a live WhatsApp
+  chat or a claim that every optional integration is available now.
+- The public contact links use the same Rithan Technologies WhatsApp number
+  and email as the company homepage.
+- The original homepage backup from this deployment is kept outside the Git
+  repository at `/var/backups/rithantechnologies-site/index.html.before-whatsapp-ai.20261029.bak`.
+- On future VPS deployments, this static page is included automatically by
+  cloning the website repository and serving its `site/` directory.
