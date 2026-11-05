@@ -1,0 +1,231 @@
+/* Rithan AI V5 color harmonization, November 2026.
+   Color-only. The approved Orbion-inspired layout and all interactions remain intact.
+   Palette: midnight indigo, soft violet, airy paper, mint for success only. */
+:root{
+  --r5-night:#0b1020;
+  --r5-night-2:#12182d;
+  --r5-night-3:#1a2038;
+  --r5-violet:#8467ed;
+  --r5-violet-hover:#9c82fa;
+  --r5-violet-soft:#c4b6ff;
+  --r5-mint:#64d9b4;
+  --r5-white:#fbfaff;
+  --r5-muted-dark:#bcc3df;
+  --r5-paper:#f8f9ff;
+  --r5-ink:#252944;
+  --r5-line:#e6e8f3;
+  --blue:#8065e9;
+  --violet:#886cf0;
+  --green:#209c7b;
+  --ink:var(--r5-ink);
+  --body:#545d74;
+  --muted:#68738a;
+  --line:var(--r5-line);
+}
+body:not(.signup-page){background:#fff;color:#545d74}
+.site-header{background:#0a0e1cfa!important;border-bottom-color:#292f49!important}
+.rithan-brand{color:var(--r5-white)!important}
+.rithan-brand strong{color:#c7b6ff!important}
+.rithan-brand .v3-brand-icon{
+  background:linear-gradient(135deg,#39345f,#5c4a9c)!important;
+  border-color:#6755ab!important;color:#f7f1ff!important;
+}
+.desktop-nav a{color:#d8dcf2!important}
+.desktop-nav a:hover,.site-auth-actions .sign-in:hover{color:#cfbfff!important}
+.site-auth-actions .sign-up,.mobile-links .mobile-sign-up{
+  color:#fff!important;background:#8062df!important;border-color:#8062df!important;
+}
+.site-auth-actions .sign-up:hover{background:#9478ef!important}
+.mobile-nav summary{background:#252b48!important;border-color:#444969!important;color:#f5f5ff!important}
+.mobile-links{background:#171b32!important;border-color:#343b58!important}
+.hero-orbion{
+  background:radial-gradient(650px 360px at 78% 9%,#5f43834d,transparent 76%),
+             radial-gradient(570px 390px at 14% 70%,#2c426c36,transparent 76%),
+             #0b1020!important;
+  color:var(--r5-muted-dark)!important;
+}
+.orbion-headline h1,.hero-orbion h1 span{color:#fff!important}
+.orbion-headline>p{color:#c9cfe5!important}
+.orbion-pill{
+  background:linear-gradient(135deg,#342d58,#20223e)!important;
+  border-color:#655893!important;color:#e2dafb!important;
+  box-shadow:0 0 32px #805fd840!important;
+}
+.orbion-pill span{
+  background:#6955b3!important;color:#fff!important;
+}
+.orbion-cta{
+  background:linear-gradient(110deg,#7459d9,#9576ed)!important;
+  color:#fff!important;border-color:#a58aff!important;
+  box-shadow:0 8px 28px #7866d451!important;
+}
+.orbion-cta:hover{background:linear-gradient(110deg,#8469e8,#ac8eff)!important}
+.orbion-outline{background:#1d2236!important;color:#f7f8ff!important;border-color:#4a4b69!important}
+.orbion-outline:hover{background:#2b304a!important}
+.orbion-product{
+  background:#11172a!important;border-color:#5e527d!important;
+  box-shadow:-48px -18px 95px -48px #7f61e3a8,54px -18px 105px -56px #beb2f8a3!important;
+}
+.orbion-product-tabs{background:#12162a!important;border-bottom-color:#363854!important}
+.orbion-product-tab{color:#fafaff!important;border-right-color:#37374f!important}
+.orbion-product-tab:hover{background:#28253e!important}
+.orbion-product-tab.is-active{
+  background:linear-gradient(110deg,#3b2b68,#2d2a53)!important;
+  box-shadow:inset 0 2px #b29bff!important;
+}
+.orbion-product-tab small{color:#b7acd7!important}
+.orbion-product-tab em{color:#c1bfd7!important}
+.orbion-tab-icon{color:#e5ddff!important}
+.orbion-product-panels{
+  background:radial-gradient(ellipse at 95% 38%,#35325689,transparent 58%),#101426!important;
+}
+.orbion-inbox-left,.orbion-chat-center,.orbion-inbox-right{
+  background:#171b30!important;border-color:#363950!important;
+}
+.orbion-list-title,.orbion-chat-top{border-bottom-color:#353950!important}
+.orbion-list-title,.orbion-chat-top strong,.orbion-contact-body strong{color:#f5f4ff!important}
+.orbion-list-title b,.orbion-badge{background:#8063df!important;color:#fff!important}
+.orbion-contact{border-bottom-color:#30334a!important}
+.orbion-contact.is-current{background:#302849!important}
+.orbion-contact-body small,.orbion-chat-top small{color:#b3b9d3!important}
+.orbion-avatar{background:linear-gradient(140deg,#aa8cfb,#6952bf)!important}
+.orbion-list-bottom,.orbion-inbox-right>small{color:#b3b9d3!important}
+.orbion-chat-body{
+  background:radial-gradient(circle at 65% 12%,#30284e78,transparent 58%),#131628!important;
+}
+.orbion-chat-message.incoming{background:#252a42!important;color:#f3f2ff!important}
+.orbion-chat-message.outgoing{background:#4a3c75!important;color:#fff!important}
+.orbion-day-label{color:#aeb1c9!important}
+.orbion-ai-label{
+  color:#d7c8ff!important;background:#302751!important;border-color:#735cba!important;
+}
+.orbion-compose{background:#252a42!important;color:#aeb6d3!important}
+.orbion-compose span:last-child{color:#c5b2ff!important}
+.orbion-side-avatar{background:linear-gradient(145deg,#9679ea,#55479d)!important}
+.orbion-side-status{
+  color:#8de5cb!important;background:#1d3a3c!important;border-color:#377264!important;
+}
+.orbion-inbox-right dd{color:#f5f5ff!important}
+.orbion-side-bottom,.orbion-side-kicker{color:#b8a6f5!important}
+.orbion-online{background:var(--r5-mint)!important;box-shadow:0 0 0 4px #64d9b41c!important}
+.orbion-agent-illustration,.orbion-flow-illustration{color:#f5f5ff}
+.orbion-agent-sidebar{
+  background:linear-gradient(145deg,#3d315c,#1c2039)!important;border-color:#665495!important;
+}
+.orbion-agent-orb{
+  background:radial-gradient(circle,#b4a0ff,#6352bf)!important;
+  box-shadow:0 0 45px #8970eb75!important;
+}
+.orbion-agent-sidebar p,.orbion-flow-heading p{color:#c9cae2!important}
+.orbion-agent-meta span{background:#352c55!important;border-color:#6855a4!important;color:#eae1ff!important}
+.orbion-agent-setting{
+  background:#1b2036!important;border-color:#40415e!important;
+}
+.orbion-agent-setting>span,.orbion-flow-node small{color:#c1a9ff!important}
+.orbion-agent-setting p,.orbion-flow-node p{color:#bfc2d9!important}
+.orbion-agent-setting b{color:var(--r5-mint)!important}
+.orbion-agent-prompt{
+  background:#302648!important;border-color:#7057a4!important;color:#e6d7ff!important;
+}
+.orbion-flow-node{
+  background:linear-gradient(160deg,#2a2946,#171b30)!important;
+  border-color:#625582!important;
+}
+.orbion-flow-icon{background:#51447b!important;color:#e9daff!important}
+.orbion-flow-arrow{color:#ad94fc!important}
+.orbion-flow-footer{color:#c4bed9!important}
+.trust-strip{background:#fff!important;border-bottom-color:var(--r5-line)!important}
+.trust-items b{color:#7961df!important}
+#features{background:#fff}
+.feature{background:#f7f8fd!important;border-color:#e8e9f4!important}
+.feature:nth-child(1){
+  background:radial-gradient(circle at 90% 20%,#62569b78,transparent 52%),#222340!important;
+  color:#fff!important;border-color:#46456f!important;
+}
+.feature:nth-child(1) p{color:#c5cae0!important}
+.feature:nth-child(1) .num{color:#cbbbff!important}
+.feature:nth-child(2){background:#f0edff!important}
+.feature:nth-child(3){background:#eef8f5!important}
+.feature .num,.eyebrow{color:#7660d7!important}
+.feature p,.section-title p{color:#646e82!important}
+.showcase{background:radial-gradient(circle at 80% 0%,#3b315e,#15192f 70%)!important}
+.scenario{background:#242845!important;border-color:#484966!important}
+.scenario[aria-pressed=true]{background:#40345f!important;border-color:#b29cff!important;box-shadow:inset 3px 0 #c7b7ff!important}
+.process,#plans{background:var(--r5-paper)!important}
+.process-step{border-color:#d7d6e9!important}
+.process-step:before{color:#8163e6!important}
+.audience-card,.addon{border-color:#e9e7f2!important}
+.audience-card .tag{background:#eeeaff!important;color:#6e56c9!important}
+.addons{background:#f3f1fb!important}
+.addon .label{color:#7960d1!important}
+.v3-plan{border-color:#e5e4f1!important;background:#fff!important}
+.v3-plan .v3-price{color:#252944!important}
+.v3-plan .v3-discount{background:#ece9ff!important;color:#674ebf!important}
+.v3-plan .btn.pale{background:#f0edff!important;border-color:#d7cdfc!important;color:#6249c0!important}
+.v3-plan.featured{
+  background:radial-gradient(circle at 85% 0%,#67579880,transparent 56%),#22233d!important;
+  border-color:#6c61a0!important;
+  box-shadow:0 20px 48px #23234c33!important;
+}
+.v3-plan.featured h3,.v3-plan.featured .v3-price,.v3-plan.featured .v3-label{color:#fff!important}
+.v3-plan.featured .v3-discount{
+  color:#281c5f!important;background:#d8d0ff!important;
+}
+.v3-plan.featured .btn{
+  background:#a28af5!important;border-color:#b5a6ff!important;color:#161327!important;
+}
+.v3-plan.featured .btn:hover{background:#c3b4ff!important}
+.orbion-compare{background:#f6f7fd!important}
+.orbion-compare-card{border-color:#e5e5f1!important}
+.orbion-compare-card.after{
+  background:#24243f!important;border-color:#6a6192!important;color:#fff!important;
+}
+.orbion-compare-card.after p{border-bottom-color:#464365!important;color:#e0ddec!important}
+.orbion-compare-card.after .orbion-side-kicker{color:#c8b6ff!important}
+.faq details{border-bottom-color:#e7e6f2!important}
+.faq summary:after{color:#8367e5!important}
+.cta-panel{
+  background:radial-gradient(circle at 92% 15%,#6759a688,transparent 45%),
+             linear-gradient(125deg,#20223f,#383359)!important;
+  color:#e5e5f6!important;
+}
+.cta-panel .btn{background:#a994f9!important;border-color:#b5a4ff!important;color:#1a1735!important}
+.cta-panel .btn:hover{background:#c9bdff!important}
+footer{background:#101427!important;color:#b5b9d0!important}
+footer .footer-links a:hover{color:#fff!important}
+footer .legal{border-top-color:#35394d!important}
+/* Signup/request-access page: same indigo and lavender palette. */
+body.signup-page{
+  background:radial-gradient(ellipse at 73% 17%,#4a3b725e,transparent 35%),#101427!important;
+  color:#f7f7ff!important;
+}
+.signup-page header{background:#0b1020ed!important;border-color:#333551!important}
+.signup-page .brand b{color:#c8baff!important}
+.signup-page .brand-mark{background:#4b3d7a!important;color:#fff!important}
+.signup-page .nav-actions .sign-in{background:#7d5edc!important;color:#fff!important}
+.signup-page .nav-actions .sign-in:hover{background:#9279ed!important}
+.signup-page .eyebrow{background:#373052!important;border-color:#6c5b9e!important;color:#d7cbff!important}
+.signup-page h1 span{color:#c4b2ff!important}
+.signup-page .intro p{color:#c1c5da!important}
+.signup-page .step{color:#d9dcf2!important}
+.signup-page .step b{background:#554479!important;color:#fff!important}
+.signup-page .intro .note{color:#b8bacf!important}
+.signup-page .form-card{
+  background:linear-gradient(155deg,#24243e,#191b30)!important;
+  border-color:#514b79!important;box-shadow:0 24px 80px #05070d7a!important;
+}
+.signup-page .form-card>span{color:#c7b4fa!important}
+.signup-page .form-card>p,.signup-page .disclosure{color:#bfc0d5!important}
+.signup-page label{color:#e8e7fb!important}
+.signup-page input{
+  background:#121729!important;color:#fff!important;border-color:#504d70!important;
+}
+.signup-page input:focus{border-color:#ae9afb!important;box-shadow:0 0 0 3px #ac95f533!important}
+.signup-page input::placeholder{color:#a0a5bc!important}
+.signup-page .consent{color:#c8c5d8!important}
+.signup-page button{background:#8467e8!important;color:#fff!important}
+.signup-page button:hover{background:#9b82f3!important}
+.signup-page .status{color:#cbb8ff!important}
+.signup-page .alt{color:#c4c4db!important}
+.signup-page .alt a{color:#c6b4ff!important}
+.signup-page footer{background:#0c1020!important;border-top-color:#35344c!important}
