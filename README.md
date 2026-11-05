@@ -74,3 +74,23 @@ Initial migration commit is made on the `main` branch locally. Configure an appr
 - Verify changes with `python3 scripts/check-rithan-ai-landing.py`, and
   request HTTP 200 from `/whatsapp-ai/`, `/whatsapp-ai/v4-orbion.css`,
   and `/whatsapp-ai/signup/`. The website needs no build pipeline.
+
+
+## Rithan AI functional self-service signup (2026-11-05)
+
+- The public Sign up links now go directly to the secure SaaS application at
+  `https://ai.rithantechnologies.com/signup` (responsive light theme).
+- The older `/whatsapp-ai/signup/` path is retained as an immediate redirect
+  and accessible fallback link. Its earlier static form is no longer the
+  registration authority. `light-signup.css` is preserved as an unused visual
+  draft and is not loaded by the redirect page.
+- Clients submit their own details and password, confirm their email via
+  a single-use link, and receive an isolated, paused workspace. A platform
+  administrator must verify/review the account, and manual subscription
+  activation is separate. WhatsApp connection is client-owned and remains
+  subject to Meta authorization and messaging controls.
+- The full signup/login implementation, Postmark integration and database
+  migration live in the separate Rithan AI Git repository. This public website
+  must NOT host or replicate authentication endpoints or credentials.
+- Public marketing pricing stays at ₹999, ₹2,398, ₹4,196, ₹5,994 for the four
+  approved subscription durations; no public reply/AI-credit limit claims.

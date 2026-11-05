@@ -64,19 +64,15 @@ assert "Instagram" not in landing + signup, "Product page should be WhatsApp-onl
 assert "v4-orbion.css" in landing
 assert css.count("{") == css.count("}"), "CSS braces do not balance"
 assert "https://ai.rithantechnologies.com/" in doc.links, "Sign-in link missing"
-assert "/whatsapp-ai/signup/" in doc.links, "Sign-up link missing"
-assert "/whatsapp-ai/signup/" in home, "Main homepage signup CTA missing"
-assert "wa.me/917904368613" in signup, "Request invitation destination missing"
-assert "mailto:rithantechnologies@gmail.com" in signup, "Email fallback missing"
-assert 'id="consent"' in signup and "type=\"checkbox\"" in signup
-assert "valid invitation" in signup.lower(), "Invitation-only onboarding must be clear"
+assert "https://ai.rithantechnologies.com/signup" in doc.links, "Secure sign-up link missing"
+assert "https://ai.rithantechnologies.com/signup" in home, "Homepage sign-up CTA missing"
+assert 'http-equiv="refresh"' in signup, "Legacy signup must redirect to the app"
+assert "https://ai.rithantechnologies.com/signup" in signup, "Redirect target missing"
+assert "https://ai.rithantechnologies.com/signup" in sign_doc.links, "Redirect fallback missing"
+for snippet in doc.scripts:
+    proc = subprocess.run(
+        ["node", "--check"], input=snippet, text=True, capture_output=True, check=False
+    )
+    assert proc.returncode == 0, f"Invalid landing JS: {proc.stderr}"
 
-for name, parsed in (("landing", doc), ("signup", sign_doc)):
-    assert parsed.scripts, f"No scripts on {name}"
-    for snippet in parsed.scripts:
-        proc = subprocess.run(
-            ["node", "--check"], input=snippet, text=True, capture_output=True, check=False
-        )
-        assert proc.returncode == 0, f"Invalid {name} JS: {proc.stderr}"
-
-print("PASS: marketing, tabs, links, four plan prices, signup and JS syntax")
+print("PASS: marketing, four prices, live sign-in, secure signup and redirect")
