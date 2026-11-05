@@ -49,3 +49,28 @@ Initial migration commit is made on the `main` branch locally. Configure an appr
   repository at `/var/backups/rithantechnologies-site/index.html.before-whatsapp-ai.20261029.bak`.
 - On future VPS deployments, this static page is included automatically by
   cloning the website repository and serving its `site/` directory.
+
+
+## Rithan AI public product UI and signup (2026-11-05)
+
+- The public WhatsApp-only product page is `/whatsapp-ai/`, with its base
+  `index.html`, `v3.css`, and latest Orbion-inspired `v4-orbion.css`.
+  Designs are original Rithan-branded markup; no Orbion code or images are used.
+- Public navigation includes **Sign in** -> `https://ai.rithantechnologies.com/`
+  and **Sign up** -> `/whatsapp-ai/signup/`.
+- The public sign-up page is **request access**, not open self-registration.
+  Client account creation still requires an administrator-issued private invitation.
+  The static form validates the business contact details locally, then opens a
+  prefilled WhatsApp message to the Rithan Technologies business number; the
+  visitor must send it manually. Email is available as an alternative.
+  There is no public database write, payment collection, user provisioning, or
+  messaging API endpoint introduced by this static page.
+- Approved subscription prices on both the homepage and product page are
+  ₹999 / 1 month, ₹2,398 / 3 months, ₹4,196 / 6 months, and
+  ₹5,994 / 12 months. Payment and activation remain manual; marketing pages
+  must not advertise AI credit/reply limits.
+- Existing Meta webhook routing and the Rithan AI application on the
+  `ai.rithantechnologies.com` subdomain are separate, unchanged services.
+- Verify changes with `python3 scripts/check-rithan-ai-landing.py`, and
+  request HTTP 200 from `/whatsapp-ai/`, `/whatsapp-ai/v4-orbion.css`,
+  and `/whatsapp-ai/signup/`. The website needs no build pipeline.
