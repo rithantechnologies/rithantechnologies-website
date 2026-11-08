@@ -1,0 +1,49 @@
+/* Rithan AI subscription showcase: scoped to pricing, accessible and responsive. */
+#plans.package-section{background:linear-gradient(180deg,#f5f6ff 0%,#fff 100%)!important;overflow:hidden}
+.package-section .pricing-intro{max-width:810px;margin-bottom:38px}
+.package-section .pricing-intro h2{font-size:clamp(2.4rem,4.7vw,4.4rem);line-height:1.08;letter-spacing:-.055em}
+.package-section .pricing-intro p{max-width:650px;font-size:1.04rem;line-height:1.72}
+.package-included{display:grid;grid-template-columns:minmax(235px,.9fr) minmax(0,1.55fr);overflow:hidden;background:white;border:1px solid #e0e2f0;border-radius:27px;box-shadow:0 26px 70px -46px #262b6155}
+.package-included-intro{position:relative;padding:clamp(26px,3.6vw,46px);background:radial-gradient(circle at 12% 0%,#6f5ec084,transparent 55%),linear-gradient(148deg,#1c2145,#10162d);color:#c7cbe4;display:flex;flex-direction:column;gap:19px}
+.package-kicker{font:700 .69rem/1.4 'DM Sans',sans-serif;color:#c9bdff;letter-spacing:.13em}
+.package-kicker span{font-size:1rem;margin-right:7px}
+.package-included-intro h3{font-size:clamp(1.7rem,2.6vw,2.55rem);line-height:1.12;letter-spacing:-.045em;color:white}
+.package-included-intro p{font-size:.93rem;line-height:1.6;margin:0;color:#c4cae7}
+.package-included-foot{font-size:.82rem;color:#d1f6de;font-weight:700;margin-top:auto;padding-top:15px}
+.package-included-foot span{margin-right:7px}
+.package-feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin:0;padding:15px;list-style:none}
+.package-feature-grid li{display:flex;gap:12px;align-items:flex-start;padding:20px 13px;border-bottom:1px solid #eff0f7;min-width:0}
+.package-feature-grid li:nth-last-child(-n+2){border-bottom:0}
+.package-feature-icon{width:36px;height:36px;display:grid;place-items:center;flex:none;background:#f1edff;color:#7659d4;border:1px solid #e4ddff;border-radius:12px;font-size:17px}
+.package-feature-grid strong{display:block;font-size:.91rem;line-height:1.35;color:#222943;letter-spacing:-.01em}
+.package-feature-grid small{display:block;margin-top:6px;font-size:.81rem;line-height:1.52;color:#646d85}
+.package-choice-head{margin:55px 0 22px;display:flex;justify-content:space-between;align-items:end;gap:22px}
+.package-mini-kicker{font:800 .7rem/1.4 'DM Sans',sans-serif;color:#7e62df;letter-spacing:.14em}
+.package-choice-head h3{font-size:clamp(1.6rem,2.7vw,2.15rem);margin-top:7px}
+.package-choice-head p{max-width:290px;margin:0;color:#727990;font-size:.89rem}
+.package-plans{gap:16px}
+.package-plans .v3-plan{position:relative;padding:28px 22px 24px;border-radius:22px;min-height:336px;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}
+.package-plans .v3-plan:hover{transform:translateY(-4px);box-shadow:0 25px 50px -30px #5b50837a}
+.package-plans .v3-plan h3{font-size:1.24rem}
+.package-plans .v3-plan .v3-price{font-size:clamp(2.2rem,3.5vw,3rem);margin-top:4px}
+.package-plans .v3-plan .v3-duration{min-height:26px}
+.package-plans .v3-plan .v3-discount{margin-top:3px}
+.package-plans .v3-plan .package-neutral{background:#eef0f8!important;color:#66718a!important}
+.package-plans .package-card-note{font-size:.85rem;line-height:1.6;margin:6px 0 12px;color:#67708b;flex:1}
+.package-plans .v3-plan.featured .package-card-note{color:#e3def6}
+.package-popular{position:absolute;top:0;right:0;background:#caff86;color:#253416;padding:8px 13px;border-bottom-left-radius:12px;font:800 .61rem/1.4 'DM Sans',sans-serif;letter-spacing:.1em}
+.package-plans .v3-plan .btn{min-height:46px;border-radius:12px;text-decoration:none}
+.package-payment{margin-top:29px;display:flex;align-items:center;gap:22px;background:#fff;border:1px solid #dfe2f0;border-radius:22px;padding:23px 27px;box-shadow:0 12px 38px -27px #45477d50}
+.package-payment-symbol{display:grid;place-items:center;flex:none;width:54px;height:54px;border-radius:17px;background:#efebff;color:#6e54d1;font-size:1.6rem;font-weight:800}
+.package-payment-copy{flex:1;min-width:0}
+.package-payment-kicker{display:block;font-size:.7rem;font-weight:800;letter-spacing:.1em;color:#7156ca}
+.package-payment h3{font-size:1.13rem;margin:5px 0 5px}
+.package-payment p{margin:0;color:#636c84;line-height:1.6;font-size:.84rem}
+.package-payment strong{color:#28314f}
+.package-payment-link{flex:none;white-space:nowrap;text-decoration:none;background:#171e38;color:#fff;padding:12px 17px;border-radius:11px;font-size:.83rem;font-weight:800;transition:background .2s}
+.package-payment-link:hover{background:#463e88}
+.package-section .v3-price-note{max-width:950px;line-height:1.65;margin-top:20px}
+@media(max-width:1050px){.package-included{grid-template-columns:1fr}.package-included-intro{gap:10px}.package-included-foot{margin-top:5px}.package-feature-grid{padding:8px 15px}}
+@media(max-width:850px){.package-payment{flex-wrap:wrap}.package-payment-link{margin-left:76px}}
+@media(max-width:600px){.package-section .pricing-intro{margin-bottom:25px}.package-included{border-radius:20px}.package-included-intro{padding:27px}.package-feature-grid{grid-template-columns:1fr;padding:10px 18px}.package-feature-grid li{padding:16px 4px}.package-feature-grid li:nth-last-child(2){border-bottom:1px solid #eff0f7}.package-choice-head{align-items:start;flex-direction:column;gap:8px;margin-top:40px}.package-choice-head p{max-width:none}.package-plans{gap:13px}.package-plans .v3-plan{min-height:0;padding:23px}.package-plans .v3-plan .package-card-note{margin-bottom:15px}.package-payment{padding:20px;align-items:start;gap:14px}.package-payment-symbol{width:43px;height:43px;font-size:1.25rem}.package-payment-copy{flex-basis:calc(100% - 57px)}.package-payment-link{margin-left:0;width:100%;text-align:center}}
+@media(prefers-reduced-motion:reduce){.package-plans .v3-plan{transition:none}}

@@ -62,6 +62,14 @@ for price in ("₹999", "₹2,398", "₹4,196", "₹5,994"):
 assert "₹2,999" not in landing + home, "Outdated WhatsApp AI price"
 assert "Instagram" not in landing + signup, "Product page should be WhatsApp-only"
 assert "v4-orbion.css" in landing
+assert "packages-20261108.css" in landing, "Package stylesheet missing"
+assert (ROOT / "site/whatsapp-ai/packages-20261108.css").is_file(), "Package styles missing"
+for item in ("Business-trained AI replies", "Tamil, English &amp; Tanglish",
+             "Capture every enquiry", "Conversation inbox", "Human takeover",
+             "Guided setup &amp; enquiry flow", "ONLINE PAYMENTS · COMING SOON"):
+    assert item in landing, f"Missing approved plan scope: {item}"
+assert "No payments or card details are collected on this website." in landing
+assert landing.count('<article class="v3-plan') == 4, "Expected four duration cards"
 assert css.count("{") == css.count("}"), "CSS braces do not balance"
 assert "https://ai.rithantechnologies.com/" in doc.links, "Sign-in link missing"
 assert "https://ai.rithantechnologies.com/signup" in doc.links, "Secure sign-up link missing"
