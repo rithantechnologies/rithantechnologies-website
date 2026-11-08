@@ -65,7 +65,7 @@ assert "v4-orbion.css" in landing
 assert "packages-20261108.css" in landing, "Package stylesheet missing"
 assert (ROOT / "site/whatsapp-ai/packages-20261108.css").is_file(), "Package styles missing"
 for item in ("Business-trained AI replies", "Tamil, English &amp; Tanglish",
-             "Capture every enquiry", "Conversation inbox", "Human takeover",
+             "Collect enquiry details", "Conversation inbox", "Human takeover",
              "Guided setup &amp; enquiry flow", "ONLINE PAYMENTS · COMING SOON"):
     assert item in landing, f"Missing approved plan scope: {item}"
 assert "No payments or card details are collected on this website." in landing
