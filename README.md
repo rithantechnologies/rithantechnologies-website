@@ -94,3 +94,66 @@ Initial migration commit is made on the `main` branch locally. Configure an appr
   must NOT host or replicate authentication endpoints or credentials.
 - Public marketing pricing stays at ₹999, ₹2,398, ₹4,196, ₹5,994 for the four
   approved subscription durations; no public reply/AI-credit limit claims.
+
+## Privacy-conscious first-party site analytics (2026-11-12)
+
+The static company website can track aggregate page views and contact link
+clicks without a third-party tracker or a separate application server.
+
+- `site/assets/visit-analytics.js` sends a same-origin POST for each supported
+  page load and clicks on `tel:`, `mailto:`, and WhatsApp links. The homepage's
+  JavaScript WhatsApp form also records a click. It respects Do Not Track and
+  Global Privacy Control preferences.
+- The event URL contains **only allowlisted page and contact categories**. No
+  cookies, visitor/session IDs, IP addresses, URL queries, hash fragments,
+  message contents, contact numbers, or user agents are written to the
+  **event log**.
+- `ops/nginx/rithantechnologies.com.conf` writes JSONL **access logs** to
+  `/var/log/nginx/rithantechnologies-access.log`, including hostname, IP,
+  HTTP status, path (no query string), user agent and coarse referrer source.
+  Access logs are for short-term operations/security, not identifying contacts.
+  Events go to `/var/log/nginx/rithantechnologies-events.log` with time,
+  hostname, event category and status only. Only 204 events are counted.
+- The VPS's pre-existing `/etc/logrotate.d/nginx` rotates `*.log` daily
+  with 14 retained rotations. Logs must remain restricted to Nginx/admin
+  users. IP addresses appear in the access log but **not** the event log.
+- The fixed POST endpoint rejects invalid methods (405), categories (404),
+  and foreign origins (403). These reduce accidental noise, but determined
+  automated clients can forge requests. **Counts are not unique people**.
+- The Nginx config preserves the website's public 403 block, HTTPS redirect,
+  WhatsApp webhook at `/webhooks/whatsapp`, and ACME challenge handling.
+  While the website remains blocked, real visitor page-view/click events are
+  naturally absent; access logging can still record the blocked attempts.
+
+### Deploy on srv2078618
+
+Do this as **root**, after the GitHub `main` branch has the change. Never
+overwrite an uncommitted live checkout or touch other site configurations.
+
+```bash
+cd /srv/rithantechnologies-website
+git pull --ff-only origin main
+bash ops/deploy-analytics-root.sh
+```
+
+The deploy script checks the repository, fast-forwards from `origin/main`,
+backs up the active Nginx site configuration, creates the two private log
+files only if absent, validates `nginx -t`, and reloads Nginx. It restores
+the previous config if validation/reload fails.
+
+### View aggregate reports
+
+```bash
+cd /srv/rithantechnologies-website
+python3 scripts/analytics-report.py --days 7
+```
+
+Reading the rotated access logs may require root or membership in `adm`.
+The reporter displays page and contact counts, request status summaries,
+and coarse referrer sources, but does not print IPs or browser identifiers.
+Historical click/pageview events cannot be reconstructed before deployment.
+
+For a **future client VPS**, clone this repository as a starting point but
+configure its own hostnames, certificate, log file names, web root, and
+allowed event pages. Do not copy WhatsApp tokens, unrelated Nginx hosts,
+private keys, or the existing webhook upstream into a client setup.

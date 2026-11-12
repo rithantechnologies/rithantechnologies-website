@@ -1322,6 +1322,7 @@ pf.addEventListener("submit", e => {
     "Need: " + v("type"), "", v("msg")].join("\n");
   document.getElementById("pfSent").classList.add("show");
   const url = "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(msg);
+  window.RithanWebsiteAnalytics?.contact("whatsapp");
   const w = window.open(url, "_blank");
   if (w) w.opener = null; else location.href = url;
 });
@@ -1346,5 +1347,6 @@ const s = document.createElement("script");
 s.type = "application/ld+json"; s.textContent = JSON.stringify(ld);
 document.head.appendChild(s);
 </script>
+<script src="/assets/visit-analytics.js" defer></script>
 </body>
 </html>
