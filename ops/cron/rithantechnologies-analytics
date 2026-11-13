@@ -1,0 +1,8 @@
+# Dedicated Rithan Technologies aggregate website report exports.
+# VPS srv2078618 uses UTC: 01:27 UTC = 06:57 IST,
+# and 16:27 UTC = 21:57 IST.
+# Do not put raw Nginx IP logs in the report-reader account.
+SHELL=/bin/sh
+PATH=/usr/sbin:/usr/bin:/sbin:/bin
+27 1 * * * root /usr/bin/python3 /srv/rithantechnologies-website/scripts/export-site-analytics.py --slot morning 2>&1 | /usr/bin/logger -t rithan-site-analytics
+27 16 * * * root /usr/bin/python3 /srv/rithantechnologies-website/scripts/export-site-analytics.py --slot evening 2>&1 | /usr/bin/logger -t rithan-site-analytics
