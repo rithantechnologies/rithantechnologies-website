@@ -336,6 +336,34 @@ nav.top a:hover{color:var(--ink)}nav.top a:hover::after{transform:none}
   max-height:none;box-shadow:none;transform:scale(calc(1.02 + var(--p,0) * .05))}
 .wk:hover .shot--flat img{transform:scale(1.08)}
 
+/* ---------- Best Agency Cash Ledger CRM illustrative preview ---------- */
+.shot--cash{padding:clamp(.75rem,3vw,1.5rem);--tA:#E9EAFD;--tB:#C8D6ED}
+.cash-screen{position:relative;z-index:1;width:100%;max-width:530px;overflow:hidden;
+  border-radius:16px;border:1px solid #cbd7eb;background:#fff;box-shadow:0 24px 46px -20px rgba(17,38,76,.36);
+  color:#18304e;font-family:"Inter Tight",sans-serif}
+.cash-screen-head{display:flex;align-items:center;gap:.65rem;background:#152846;color:#fff;
+  padding:clamp(.6rem,2vw,.95rem)}
+.cash-screen-logo{display:grid;place-items:center;width:35px;height:35px;flex:none;border-radius:10px;
+  background:#a5b4fc;color:#152846;font-size:.73rem;font-weight:800}
+.cash-screen-name{font-size:.86rem;font-weight:750;line-height:1.2}
+.cash-screen-name small{display:block;font-size:.7rem;color:#bcd0e6;font-weight:500;margin-top:.15rem}
+.cash-screen-tag{margin-left:auto;font:.64rem/1.1 "IBM Plex Mono",monospace;color:#d3e3fa;
+  border:1px solid #49637e;border-radius:999px;padding:.35rem .5rem;white-space:nowrap}
+.cash-screen-body{padding:clamp(.7rem,2.3vw,1.2rem)}
+.cash-screen-title{font-size:clamp(.83rem,1.8vw,1.06rem);font-weight:750;margin-bottom:.7rem}
+.cash-modules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(.4rem,1.5vw,.7rem)}
+.cash-module{min-width:0;border:1px solid #e0e8f2;border-radius:10px;padding:clamp(.55rem,1.5vw,.8rem);
+  background:#f7f9fe}
+.cash-module span{display:block;font:.61rem/1.2 "IBM Plex Mono",monospace;color:#6b83a4}
+.cash-module strong{display:block;font-size:clamp(.75rem,1.65vw,.98rem);margin-top:.3rem;color:#18304e}
+.cash-module small{display:block;font-size:clamp(.62rem,1.45vw,.75rem);margin-top:.2rem;color:#637894}
+.cash-screen-bottom{display:flex;align-items:center;justify-content:space-between;gap:.6rem;
+  margin-top:.7rem;padding:.58rem .7rem;border-radius:9px;background:#eaf0fb;
+  font-size:clamp(.65rem,1.5vw,.76rem);color:#405b7e}
+.cash-screen-bottom strong{color:#244e9b;font-size:inherit;white-space:nowrap}
+@media(max-width:420px){.cash-screen-tag{display:none}.cash-screen-body{padding:.65rem}
+  .cash-screen-bottom{font-size:.63rem}.cash-module strong{font-size:.76rem}}
+
 /* ---------- mobile: hover doesn't exist, so make it swipeable ---------- */
 @media(max-width:899px){
   .shot{aspect-ratio:1/1;padding:1.1rem;gap:.9rem;
@@ -721,6 +749,43 @@ footer p{font-size:.93rem;max-width:36ch;margin:0}
             <p>Benefit-led page in Tamil for shop owners who don't read technical English, with a
               single WhatsApp action and a free-trial offer, plus the campaign creative behind it.</p>
             <a class="wk-link" href="https://aquatechmart.in/" target="_blank" rel="noopener">Visit aquatechmart.in</a>
+          </div>
+        </details>
+      </div>
+    </article>
+
+    <article class="wk gl rv" id="best-agency-cash-ledger">
+      <div class="shot shot--cash">
+        <div class="cash-screen" aria-label="Illustrative Cash Ledger CRM dashboard preview. No real customer or financial data.">
+          <div class="cash-screen-head">
+            <span class="cash-screen-logo">BA</span>
+            <span class="cash-screen-name">Best Agency<small>Cash Ledger CRM</small></span>
+            <span class="cash-screen-tag">Illustrative preview</span>
+          </div>
+          <div class="cash-screen-body">
+            <div class="cash-screen-title">Business operations, in one place</div>
+            <div class="cash-modules">
+              <div class="cash-module"><span>01 / DAILY</span><strong>Daily Cash</strong><small>Cash in and cash out</small></div>
+              <div class="cash-module"><span>02 / PAYOUTS</span><strong>Card Swipe</strong><small>Customer payouts</small></div>
+              <div class="cash-module"><span>03 / ACCOUNTS</span><strong>Bank &amp; Wallet</strong><small>Account ledgers</small></div>
+              <div class="cash-module"><span>04 / REPORTS</span><strong>Income &amp; Expenses</strong><small>Traceable records</small></div>
+            </div>
+            <div class="cash-screen-bottom"><span>Transaction history &amp; audit trail</span><strong>Organised records</strong></div>
+          </div>
+        </div>
+      </div>
+      <div class="wk-body">
+        <div class="kind"><span class="mono">Custom CRM</span><span class="mono">Financial operations</span></div>
+        <h3>Cash Ledger CRM — Best Agency</h3>
+        <p>A custom business operations system bringing daily cash activity, card-swipe transactions,
+          customer payouts and bank or wallet accounts into one organised workflow.</p>
+        <div class="chips"><span class="chip">Daily Cash</span><span class="chip">Card Swipe</span><span class="chip">Account Ledgers</span><span class="chip">Audit Trail</span></div>
+        <details class="more"><summary>What we built</summary>
+          <div class="inner">
+            <p>Cash in/out entry, customer transaction tracking, card-swipe and payout workflows,
+              separate cash and wallet ledgers, income and expense views, and a traceable
+              transaction history for day-to-day reconciliation. Dashboard artwork is illustrative;
+              no private Best Agency records are displayed.</p>
           </div>
         </details>
       </div>
