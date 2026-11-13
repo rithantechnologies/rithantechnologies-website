@@ -120,10 +120,9 @@ clicks without a third-party tracker or a separate application server.
 - The fixed POST endpoint rejects invalid methods (405), categories (404),
   and foreign origins (403). These reduce accidental noise, but determined
   automated clients can forge requests. **Counts are not unique people**.
-- The Nginx config preserves the website's public 403 block, HTTPS redirect,
+- The Nginx config serves the public static website with HTTPS redirect,
   WhatsApp webhook at `/webhooks/whatsapp`, and ACME challenge handling.
-  While the website remains blocked, real visitor page-view/click events are
-  naturally absent; access logging can still record the blocked attempts.
+  Analytics categories and access logging remain restricted as documented.
 
 ### Deploy on srv2078618
 
@@ -157,3 +156,11 @@ For a **future client VPS**, clone this repository as a starting point but
 configure its own hostnames, certificate, log file names, web root, and
 allowed event pages. Do not copy WhatsApp tokens, unrelated Nginx hosts,
 private keys, or the existing webhook upstream into a client setup.
+
+## Public website and price-free company demo (2026-11-13)
+
+The main public website is enabled. The standalone page at
+`/whatsapp-ai/free-trial/` is specifically for company referrals: it describes
+free-trial onboarding and links to the SaaS sign-up without subscription prices.
+The standard `/whatsapp-ai/` marketing page and public subscription prices
+are unchanged. Account review and manual activation are still required.

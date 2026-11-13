@@ -26,9 +26,9 @@ fi
 git fetch origin main
 git merge --ff-only origin/main
 
-# Safety: maintain the user's intentionally disabled public site.
-grep -Fq 'location ^~ / {' "$source_file"
-grep -Fq 'return 403;' "$source_file"
+# Safety: maintain the owner's public-site restore and existing special routes.
+grep -Fq 'location / {' "$source_file"
+grep -Fq 'try_files $uri $uri/ =404;' "$source_file"
 grep -Fq 'location = /webhooks/whatsapp' "$source_file"
 grep -Fq 'location ^~ /.well-known/acme-challenge/' "$source_file"
 grep -Fq 'rithantechnologies-events.log' "$source_file"
@@ -60,6 +60,6 @@ if ! systemctl reload nginx; then
     restore
 fi
 
-echo "Analytics Nginx config active. Public website 403 block retained."
+echo "Analytics Nginx config active. Public website enabled."
 echo "Old config kept: $backup"
 echo "Report command: python3 $repo/scripts/analytics-report.py --days 7"
